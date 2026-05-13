@@ -3,595 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="프론트엔드 개발자 포트폴리오">
-    <title>Portfolio | Creative Developer</title>
-    <style>
-        :root {
-            --ink: #151515;
-            --muted: #5e625f;
-            --line: #dedbd4;
-            --paper: #f7f4ee;
-            --surface: #ffffff;
-            --accent: #0d7f70;
-            --accent-2: #c44b2d;
-            --sun: #f0b442;
-            --night: #243447;
-            --shadow: 0 18px 45px rgba(26, 26, 26, 0.11);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            color: var(--ink);
-            background: var(--paper);
-            font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img,
-        svg {
-            display: block;
-            max-width: 100%;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 1px solid rgba(222, 219, 212, 0.72);
-            background: rgba(247, 244, 238, 0.88);
-            backdrop-filter: blur(16px);
-        }
-
-        .nav {
-            width: min(1120px, calc(100% - 32px));
-            min-height: 68px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            letter-spacing: 0;
-        }
-
-        .brand-mark {
-            width: 34px;
-            height: 34px;
-            display: grid;
-            place-items: center;
-            border-radius: 8px;
-            color: white;
-            background: var(--ink);
-            font-size: 0.88rem;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .nav-links a {
-            min-height: 40px;
-            padding: 9px 12px;
-            border-radius: 8px;
-            color: var(--muted);
-            font-size: 0.93rem;
-            font-weight: 700;
-        }
-
-        .nav-links a:hover {
-            color: var(--ink);
-            background: rgba(21, 21, 21, 0.06);
-        }
-
-        main {
-            overflow: hidden;
-        }
-
-        .section {
-            width: min(1120px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 84px 0;
-        }
-
-        .hero {
-            width: min(1120px, calc(100% - 32px));
-            min-height: calc(100vh - 68px);
-            margin: 0 auto;
-            padding: 64px 0 52px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
-            align-items: center;
-            gap: 52px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin: 0 0 18px;
-            color: var(--accent);
-            font-size: 0.86rem;
-            font-weight: 800;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 2px;
-            background: currentColor;
-        }
-
-        h1,
-        h2,
-        h3,
-        p {
-            margin-top: 0;
-        }
-
-        h1 {
-            max-width: 760px;
-            margin-bottom: 24px;
-            font-size: clamp(2.7rem, 7vw, 6.2rem);
-            line-height: 0.96;
-            letter-spacing: 0;
-        }
-
-        .hero-copy {
-            max-width: 690px;
-            margin-bottom: 34px;
-            color: var(--muted);
-            font-size: clamp(1.05rem, 2vw, 1.22rem);
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 44px;
-        }
-
-        .button {
-            min-height: 48px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 17px;
-            border: 1px solid var(--ink);
-            border-radius: 8px;
-            background: var(--ink);
-            color: white;
-            font-weight: 800;
-            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-        }
-
-        .button svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .button.secondary {
-            background: transparent;
-            color: var(--ink);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-            max-width: 670px;
-        }
-
-        .stat {
-            padding: 18px 0 0;
-            border-top: 1px solid var(--line);
-        }
-
-        .stat strong {
-            display: block;
-            font-size: clamp(1.55rem, 3vw, 2.15rem);
-            line-height: 1;
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 0.92rem;
-            font-weight: 700;
-        }
-
-        .portrait-wrap {
-            position: relative;
-            isolation: isolate;
-        }
-
-        .portrait {
-            min-height: 520px;
-            display: grid;
-            align-content: end;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background:
-                radial-gradient(circle at 22% 24%, rgba(240, 180, 66, 0.55), transparent 26%),
-                linear-gradient(145deg, #224b57 0%, #f7f4ee 42%, #d9e4df 100%);
-            box-shadow: var(--shadow);
-        }
-
-        .portrait svg {
-            width: 100%;
-            height: auto;
-            margin-top: auto;
-        }
-
-        .floating-note {
-            position: absolute;
-            right: -18px;
-            bottom: 46px;
-            width: min(240px, 62%);
-            padding: 16px;
-            border: 1px solid rgba(21, 21, 21, 0.12);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.88);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(14px);
-        }
-
-        .floating-note strong {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-
-        .floating-note span {
-            color: var(--muted);
-            font-size: 0.88rem;
-            font-weight: 650;
-        }
-
-        .section-heading {
-            display: grid;
-            grid-template-columns: minmax(0, 0.82fr) minmax(240px, 0.48fr);
-            align-items: end;
-            gap: 28px;
-            margin-bottom: 34px;
-        }
-
-        h2 {
-            margin-bottom: 0;
-            font-size: clamp(2rem, 4vw, 3.6rem);
-            line-height: 1.03;
-            letter-spacing: 0;
-        }
-
-        .section-heading p {
-            margin-bottom: 0;
-            color: var(--muted);
-            font-weight: 650;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .project-card {
-            min-height: 430px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--surface);
-            transition: transform 180ms ease, box-shadow 180ms ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow);
-        }
-
-        .project-visual {
-            position: relative;
-            min-height: 210px;
-            overflow: hidden;
-            background: #dbe5df;
-        }
-
-        .project-visual svg {
-            width: 100%;
-            height: 210px;
-        }
-
-        .project-body {
-            padding: 22px;
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-        }
-
-        .project-body h3 {
-            margin-bottom: 10px;
-            font-size: 1.22rem;
-            line-height: 1.25;
-        }
-
-        .project-body p {
-            color: var(--muted);
-            font-size: 0.96rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: auto;
-        }
-
-        .tag {
-            padding: 6px 9px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: var(--muted);
-            font-size: 0.78rem;
-            font-weight: 800;
-        }
-
-        .about-band {
-            background: var(--ink);
-            color: white;
-        }
-
-        .about-band .section {
-            display: grid;
-            grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
-            gap: 46px;
-        }
-
-        .about-band .eyebrow,
-        .about-band .section-copy,
-        .about-band .skill-list span {
-            color: rgba(255, 255, 255, 0.72);
-        }
-
-        .section-copy {
-            max-width: 700px;
-            margin-top: 24px;
-            margin-bottom: 0;
-            font-size: clamp(1rem, 2vw, 1.18rem);
-        }
-
-        .skill-list {
-            display: grid;
-            gap: 12px;
-            align-content: start;
-        }
-
-        .skill-item {
-            padding: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .skill-item strong {
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .process {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .process-step {
-            min-height: 180px;
-            padding: 20px;
-            border-top: 4px solid var(--accent);
-            background: rgba(255, 255, 255, 0.58);
-        }
-
-        .process-step:nth-child(2) {
-            border-color: var(--accent-2);
-        }
-
-        .process-step:nth-child(3) {
-            border-color: var(--sun);
-        }
-
-        .process-step:nth-child(4) {
-            border-color: var(--night);
-        }
-
-        .process-step span {
-            display: block;
-            margin-bottom: 16px;
-            color: var(--muted);
-            font-weight: 900;
-        }
-
-        .process-step h3 {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-        }
-
-        .process-step p {
-            margin-bottom: 0;
-            color: var(--muted);
-            font-size: 0.93rem;
-        }
-
-        .contact {
-            padding-bottom: 96px;
-        }
-
-        .contact-panel {
-            display: grid;
-            grid-template-columns: minmax(0, 0.9fr) auto;
-            align-items: center;
-            gap: 28px;
-            padding: clamp(28px, 5vw, 52px);
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--surface);
-            box-shadow: var(--shadow);
-        }
-
-        .contact-panel h2 {
-            margin-bottom: 14px;
-        }
-
-        .contact-panel p {
-            max-width: 680px;
-            margin-bottom: 0;
-            color: var(--muted);
-            font-weight: 650;
-        }
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 12px;
-        }
-
-        .site-footer {
-            border-top: 1px solid var(--line);
-        }
-
-        .footer-inner {
-            width: min(1120px, calc(100% - 32px));
-            min-height: 78px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .socials {
-            display: flex;
-            gap: 12px;
-        }
-
-        .socials a {
-            color: var(--ink);
-        }
-
-        @media (max-width: 860px) {
-            .nav {
-                min-height: 62px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero,
-            .section-heading,
-            .about-band .section,
-            .contact-panel {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: auto;
-                padding-top: 48px;
-                gap: 34px;
-            }
-
-            .portrait {
-                min-height: 420px;
-            }
-
-            .floating-note {
-                right: 14px;
-                bottom: 18px;
-            }
-
-            .work-grid,
-            .process {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .contact-actions {
-                justify-content: flex-start;
-            }
-        }
-
-        @media (max-width: 620px) {
-            .section {
-                padding: 62px 0;
-            }
-
-            .hero-actions,
-            .stats,
-            .work-grid,
-            .process {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-actions .button,
-            .contact-actions .button {
-                width: 100%;
-            }
-
-            .stats {
-                display: grid;
-            }
-
-            .project-card {
-                min-height: 0;
-            }
-
-            .footer-inner {
-                padding: 22px 0;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    <meta name="description" content="로봇 엔지니어 포트폴리오">
+    <title>Robot Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav" aria-label="주요 메뉴">
             <a class="brand" href="#top" aria-label="홈으로 이동">
-                <span class="brand-mark">P</span>
-                <span>Portfolio</span>
+                <span class="brand-mark">RE</span>
+                <span>Robot Engineer</span>
             </a>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
+            <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="site-menu">
+                <a href="#work">Projects</a>
+                <a href="#skills">Skills</a>
                 <a href="#process">Process</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -600,227 +31,231 @@
 
     <main id="top">
         <section class="hero" aria-label="소개">
-            <div>
-                <p class="eyebrow">Frontend Portfolio</p>
-                <h1>사용자 경험을 제품으로 연결하는 개발자.</h1>
+            <div class="hero-content reveal">
+                <p class="eyebrow">Robotics Portfolio</p>
+                <h1>현실에서 움직이는 로봇 시스템을 설계하고 구현합니다.</h1>
                 <p class="hero-copy">
-                    기획의 의도를 읽고, 인터페이스를 설계하며, 빠르고 안정적인 웹 경험으로 구현합니다.
-                    이 페이지는 프로젝트, 역량, 작업 방식을 한눈에 볼 수 있도록 만든 개인 포트폴리오입니다.
+                    센서 데이터, 제어 로직, 임베디드 하드웨어, ROS 기반 소프트웨어를 연결해
+                    안정적으로 동작하는 로봇 시스템을 만드는 로봇 엔지니어 포트폴리오입니다.
                 </p>
                 <div class="hero-actions">
                     <a class="button" href="#work">
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
                             <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        작업 보기
+                        프로젝트 보기
                     </a>
-                    <a class="button secondary" href="mailto:hello@example.com">
+                    <a class="button secondary" href="mailto:tkddnjs0132@gmail.com">
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
                             <path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                             <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        연락하기
+                        이메일 문의
                     </a>
                 </div>
                 <div class="stats" aria-label="포트폴리오 요약">
                     <div class="stat">
-                        <strong>12+</strong>
-                        <span>완성한 웹 프로젝트</span>
+                        <strong>ROS</strong>
+                        <span>로봇 미들웨어</span>
                     </div>
                     <div class="stat">
-                        <strong>4</strong>
-                        <span>핵심 기술 스택</span>
+                        <strong>Control</strong>
+                        <span>모터 및 구동 제어</span>
                     </div>
                     <div class="stat">
-                        <strong>100%</strong>
-                        <span>반응형 페이지</span>
+                        <strong>Sensor</strong>
+                        <span>인지와 데이터 처리</span>
                     </div>
                 </div>
             </div>
 
-            <div class="portrait-wrap" aria-hidden="true">
-                <div class="portrait">
-                    <svg viewBox="0 0 560 620" role="img" aria-label="">
-                        <defs>
-                            <linearGradient id="desk" x1="0" x2="1" y1="0" y2="1">
-                                <stop offset="0" stop-color="#ffffff"/>
-                                <stop offset="1" stop-color="#d1ddd7"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="48" y="348" width="464" height="168" rx="22" fill="url(#desk)"/>
-                        <rect x="118" y="182" width="324" height="218" rx="24" fill="#151515"/>
-                        <rect x="137" y="202" width="286" height="158" rx="12" fill="#f7f4ee"/>
-                        <rect x="158" y="228" width="120" height="14" rx="7" fill="#0d7f70"/>
-                        <rect x="158" y="260" width="220" height="10" rx="5" fill="#d6d2c8"/>
-                        <rect x="158" y="284" width="178" height="10" rx="5" fill="#d6d2c8"/>
-                        <rect x="158" y="316" width="86" height="22" rx="8" fill="#c44b2d"/>
-                        <circle cx="398" cy="276" r="35" fill="#f0b442"/>
-                        <path d="M86 514H474L520 620H40L86 514Z" fill="#243447"/>
-                        <rect x="178" y="408" width="204" height="128" rx="18" fill="#ffffff"/>
-                        <path d="M221 456H339" stroke="#151515" stroke-width="13" stroke-linecap="round"/>
-                        <path d="M244 489H316" stroke="#0d7f70" stroke-width="13" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <div class="floating-note">
-                    <strong>Available for projects</strong>
-                    <span>웹 서비스, 포트폴리오, 인터랙티브 UI 제작</span>
+            <div class="robot-stage reveal" aria-hidden="true">
+                <div class="scan-line"></div>
+                <svg viewBox="0 0 560 560" role="img" aria-label="">
+                    <defs>
+                        <linearGradient id="bodyGradient" x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0" stop-color="#f8fafc"/>
+                            <stop offset="1" stop-color="#cfd8df"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="280" cy="280" r="236" fill="#10222f"/>
+                    <path class="orbit orbit-one" d="M86 286C142 140 418 140 474 286" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round"/>
+                    <path class="orbit orbit-two" d="M86 286C142 432 418 432 474 286" fill="none" stroke="#f0b442" stroke-width="4" stroke-linecap="round"/>
+                    <rect x="166" y="150" width="228" height="196" rx="34" fill="url(#bodyGradient)"/>
+                    <rect x="204" y="190" width="152" height="66" rx="20" fill="#111827"/>
+                    <circle class="robot-eye left" cx="242" cy="223" r="13" fill="#62d6c4"/>
+                    <circle class="robot-eye right" cx="318" cy="223" r="13" fill="#62d6c4"/>
+                    <path d="M234 292H326" stroke="#15202b" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M166 238H110C94 238 82 250 82 266V316" fill="none" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
+                    <path d="M394 238H450C466 238 478 250 478 266V316" fill="none" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
+                    <circle cx="82" cy="326" r="28" fill="#f15d3f"/>
+                    <circle cx="478" cy="326" r="28" fill="#f15d3f"/>
+                    <rect x="206" y="346" width="148" height="86" rx="18" fill="#f8fafc"/>
+                    <path d="M236 388H324" stroke="#62d6c4" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M214 432L184 506" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
+                    <path d="M346 432L376 506" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
+                    <rect x="134" y="496" width="92" height="28" rx="14" fill="#111827"/>
+                    <rect x="334" y="496" width="92" height="28" rx="14" fill="#111827"/>
+                </svg>
+                <div class="status-card">
+                    <strong>System Online</strong>
+                    <span>ROS · Control · Embedded</span>
                 </div>
             </div>
         </section>
 
         <section class="section" id="work">
-            <div class="section-heading">
-                <h2>Selected Work</h2>
-                <p>실제 프로젝트 정보로 교체하기 쉬운 구조입니다. 제목, 설명, 링크만 바꾸면 바로 개인 작업물 목록이 됩니다.</p>
+            <div class="section-heading reveal">
+                <h2>Robotics Projects</h2>
+                <p>실제 프로젝트를 넣기 전까지 사용할 수 있는 로봇 엔지니어용 프로젝트 예시입니다.</p>
             </div>
 
             <div class="work-grid">
-                <article class="project-card">
-                    <div class="project-visual" aria-hidden="true">
+                <article class="project-card reveal">
+                    <div class="project-visual visual-ros" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#dfeae5"/>
-                            <rect x="30" y="28" width="156" height="154" rx="8" fill="#151515"/>
-                            <rect x="208" y="28" width="182" height="44" rx="8" fill="#0d7f70"/>
-                            <rect x="208" y="90" width="78" height="92" rx="8" fill="#f0b442"/>
-                            <rect x="304" y="90" width="86" height="92" rx="8" fill="#ffffff"/>
-                            <path d="M57 139L101 92L134 122L161 74" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect width="420" height="210" fill="#dfe8ef"/>
+                            <rect x="42" y="44" width="128" height="122" rx="14" fill="#122231"/>
+                            <rect x="204" y="34" width="154" height="142" rx="12" fill="#ffffff"/>
+                            <path d="M76 106H136M106 76V136" stroke="#62d6c4" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M232 72H330M232 106H304M232 140H340" stroke="#1f2d3a" stroke-width="10" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>Dashboard Redesign</h3>
-                        <p>복잡한 지표를 빠르게 읽을 수 있도록 정보 구조와 컴포넌트 시스템을 정리한 운영 대시보드.</p>
+                        <h3>ROS 기반 로봇 제어 시스템</h3>
+                        <p>토픽, 노드, 센서 데이터를 연결해 로봇 상태를 모니터링하고 구동 명령을 처리하는 구조를 설계합니다.</p>
                         <div class="tags">
-                            <span class="tag">React</span>
-                            <span class="tag">UI System</span>
-                            <span class="tag">Chart</span>
+                            <span class="tag">ROS</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-visual" aria-hidden="true">
+                <article class="project-card reveal">
+                    <div class="project-visual visual-control" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#fbf7ec"/>
-                            <circle cx="99" cy="106" r="62" fill="#c44b2d"/>
-                            <rect x="197" y="42" width="168" height="126" rx="14" fill="#151515"/>
-                            <rect x="221" y="68" width="118" height="14" rx="7" fill="#ffffff"/>
-                            <rect x="221" y="100" width="74" height="10" rx="5" fill="#f0b442"/>
-                            <rect x="221" y="126" width="104" height="10" rx="5" fill="#6db4aa"/>
+                            <rect width="420" height="210" fill="#f7efe4"/>
+                            <circle cx="112" cy="106" r="58" fill="#f15d3f"/>
+                            <circle cx="112" cy="106" r="22" fill="#ffffff"/>
+                            <rect x="210" y="48" width="146" height="114" rx="16" fill="#112231"/>
+                            <path d="M238 128C260 76 304 76 328 118" fill="none" stroke="#f0b442" stroke-width="12" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>Brand Landing Page</h3>
-                        <p>브랜드의 첫인상을 선명하게 전달하고 모바일 전환 흐름을 개선한 반응형 페이지.</p>
+                        <h3>모터 제어 및 구동부 튜닝</h3>
+                        <p>PID 제어, 속도 제한, 안전 조건을 고려해 실제 구동 환경에서 안정적인 움직임을 만드는 작업입니다.</p>
                         <div class="tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">Motion</span>
+                            <span class="tag">PID</span>
+                            <span class="tag">Motor</span>
+                            <span class="tag">CAN/UART</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-visual" aria-hidden="true">
+                <article class="project-card reveal">
+                    <div class="project-visual visual-sensor" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#e3e2da"/>
-                            <rect x="38" y="38" width="108" height="134" rx="12" fill="#ffffff"/>
-                            <rect x="166" y="38" width="108" height="134" rx="12" fill="#243447"/>
-                            <rect x="294" y="38" width="88" height="134" rx="12" fill="#0d7f70"/>
-                            <circle cx="92" cy="82" r="22" fill="#f0b442"/>
-                            <path d="M190 132H250" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M316 78H360M316 110H348M316 142H354" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+                            <rect width="420" height="210" fill="#e7ece8"/>
+                            <path d="M58 156C112 58 234 42 356 86" fill="none" stroke="#10222f" stroke-width="14" stroke-linecap="round"/>
+                            <circle cx="104" cy="132" r="22" fill="#62d6c4"/>
+                            <circle cx="202" cy="80" r="18" fill="#f0b442"/>
+                            <circle cx="314" cy="82" r="26" fill="#f15d3f"/>
+                            <rect x="66" y="160" width="288" height="18" rx="9" fill="#ffffff"/>
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>Portfolio System</h3>
-                        <p>작업물을 빠르게 추가하고 수정할 수 있도록 섹션과 카드 구조를 단순화한 개인 사이트.</p>
+                        <h3>센서 데이터 처리와 경로 판단</h3>
+                        <p>거리 센서, IMU, 카메라 등에서 들어오는 데이터를 정리해 로봇의 판단 로직에 사용할 수 있게 만듭니다.</p>
                         <div class="tags">
-                            <span class="tag">GitHub Pages</span>
-                            <span class="tag">A11y</span>
-                            <span class="tag">Responsive</span>
+                            <span class="tag">Sensor Fusion</span>
+                            <span class="tag">IMU</span>
+                            <span class="tag">Vision</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="about-band" id="about">
-            <div class="section">
-                <div>
-                    <p class="eyebrow">About</p>
-                    <h2>문제의 구조를 이해하고, 끝까지 작동하는 화면으로 만듭니다.</h2>
+        <section class="skill-band" id="skills">
+            <div class="section skill-layout">
+                <div class="reveal">
+                    <p class="eyebrow">Skills</p>
+                    <h2>하드웨어와 소프트웨어 사이를 연결하는 엔지니어링.</h2>
                     <p class="section-copy">
-                        저는 사용자가 무엇을 하려는지 먼저 파악한 뒤, 화면의 흐름과 상태를 정리하고 코드로 구현합니다.
-                        작은 인터랙션, 읽기 쉬운 레이아웃, 유지보수 가능한 스타일 시스템을 중요하게 생각합니다.
+                        로봇은 코드만으로 완성되지 않습니다. 센서 신호, 전원, 통신, 제어 주기, 실제 환경의 노이즈까지 함께 고려해야 합니다.
+                        저는 시스템 전체가 안정적으로 움직이는 방향으로 문제를 나누고 검증합니다.
                     </p>
                 </div>
-                <div class="skill-list" aria-label="핵심 역량">
+                <div class="skill-list reveal" aria-label="핵심 역량">
                     <div class="skill-item">
-                        <strong>Frontend Engineering</strong>
-                        <span>HTML, CSS, JavaScript, React 기반 UI 구현</span>
+                        <strong>Robot Software</strong>
+                        <span>ROS, 노드 설계, 토픽 통신, 시뮬레이션 연동</span>
                     </div>
                     <div class="skill-item">
-                        <strong>Product Thinking</strong>
-                        <span>사용자 흐름, 정보 구조, 빠른 프로토타이핑</span>
+                        <strong>Embedded Control</strong>
+                        <span>MCU, 모터 드라이버, UART/CAN/I2C 통신</span>
                     </div>
                     <div class="skill-item">
-                        <strong>Visual Polish</strong>
-                        <span>반응형 레이아웃, 접근성, 인터랙션 디테일</span>
+                        <strong>System Integration</strong>
+                        <span>센서 보정, 디버깅, 현장 테스트, 로그 분석</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section" id="process">
-            <div class="section-heading">
-                <h2>How I Work</h2>
-                <p>아이디어가 흐릿할 때는 구조를 잡고, 방향이 보이면 빠르게 구현해서 실제 화면으로 검증합니다.</p>
+            <div class="section-heading reveal">
+                <h2>Engineering Process</h2>
+                <p>아이디어보다 중요한 것은 실제 환경에서 반복 검증 가능한 구조를 만드는 일이라고 생각합니다.</p>
             </div>
             <div class="process">
-                <article class="process-step">
+                <article class="process-step reveal">
                     <span>01</span>
-                    <h3>Discover</h3>
-                    <p>목표, 사용자, 필요한 화면을 정리합니다.</p>
+                    <h3>Define</h3>
+                    <p>목표 동작, 제약 조건, 실패 조건을 먼저 정리합니다.</p>
                 </article>
-                <article class="process-step">
+                <article class="process-step reveal">
                     <span>02</span>
-                    <h3>Design</h3>
-                    <p>정보 구조와 컴포넌트 단위를 잡습니다.</p>
+                    <h3>Prototype</h3>
+                    <p>센서와 구동부를 빠르게 연결해 기본 동작을 확인합니다.</p>
                 </article>
-                <article class="process-step">
+                <article class="process-step reveal">
                     <span>03</span>
-                    <h3>Build</h3>
-                    <p>반응형 UI와 상태별 동작을 구현합니다.</p>
+                    <h3>Integrate</h3>
+                    <p>제어 로직, 통신, 상태 관리 구조를 하나의 시스템으로 묶습니다.</p>
                 </article>
-                <article class="process-step">
+                <article class="process-step reveal">
                     <span>04</span>
-                    <h3>Refine</h3>
-                    <p>속도, 접근성, 세부 표현을 다듬습니다.</p>
+                    <h3>Validate</h3>
+                    <p>로그와 현장 테스트로 안정성, 반복성, 예외 상황을 점검합니다.</p>
                 </article>
             </div>
         </section>
 
         <section class="section contact" id="contact">
-            <div class="contact-panel">
+            <div class="contact-panel reveal">
                 <div>
                     <p class="eyebrow">Contact</p>
-                    <h2>함께 만들 프로젝트가 있다면 이야기해요.</h2>
-                    <p>아래 이메일과 GitHub 링크를 실제 계정으로 바꾸면 바로 사용할 수 있습니다.</p>
+                    <h2>로봇 프로젝트와 엔지니어링 협업을 환영합니다.</h2>
+                    <p>이메일로 연락해 주세요. 프로젝트, 연구, 포트폴리오 피드백 모두 열려 있습니다.</p>
+                    <p class="email-text">tkddnjs0132@gmail.com</p>
                 </div>
                 <div class="contact-actions">
-                    <a class="button" href="mailto:hello@example.com">
+                    <a class="button" href="mailto:tkddnjs0132@gmail.com">
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
                             <path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                             <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Email
                     </a>
-                    <a class="button secondary" href="https://github.com/" target="_blank" rel="noreferrer">
+                    <button class="button secondary" type="button" data-copy-email="tkddnjs0132@gmail.com">
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 19C4.7 20.4 4.7 16.8 3 16.4M15 21V17.7C15 16.8 15.1 16.4 14.6 15.9C17.2 15.6 20 14.6 20 10.1C20 8.9 19.5 7.8 18.8 6.9C18.9 6.6 19.3 5.3 18.7 3.6C18.7 3.6 17.7 3.3 15.4 4.9C14.4 4.6 13.3 4.5 12.3 4.5C11.2 4.5 10.1 4.6 9.1 4.9C6.8 3.3 5.8 3.6 5.8 3.6C5.2 5.3 5.6 6.6 5.7 6.9C5 7.8 4.5 8.9 4.5 10.1C4.5 14.6 7.3 15.6 9.9 15.9C9.5 16.3 9.2 16.9 9.2 17.8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="9" y="9" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M5 15V7C5 5.9 5.9 5 7 5H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                        GitHub
-                    </a>
+                        <span>복사</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -828,11 +263,11 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <span>© 2026 Portfolio. Built with care.</span>
-            <div class="socials" aria-label="소셜 링크">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="mailto:hello@example.com">Email</a>
+            <span>© 2026 Robot Engineer Portfolio.</span>
+            <div class="socials" aria-label="하단 링크">
+                <a href="#work">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="mailto:tkddnjs0132@gmail.com">Email</a>
             </div>
         </div>
     </footer>
