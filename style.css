@@ -300,6 +300,18 @@ h2 {
     animation: thrusterPulse 900ms ease-in-out infinite;
 }
 
+.vector-thruster {
+    animation: vectorThruster 1.8s ease-in-out infinite;
+}
+
+.robot-arm {
+    animation: armBalance 3.4s ease-in-out infinite;
+}
+
+.right-arm {
+    animation-delay: 0.4s;
+}
+
 .bubble-stream {
     animation: bubblesRise 3.8s ease-in-out infinite;
 }
@@ -641,6 +653,30 @@ h2 {
 
     50% {
         opacity: 0.95;
+    }
+}
+
+@keyframes vectorThruster {
+    0%,
+    100% {
+        opacity: 0.82;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes armBalance {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
     }
 }
 

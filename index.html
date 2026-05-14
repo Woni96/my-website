@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="로봇 엔지니어 포트폴리오">
-    <title>Robot Engineer Portfolio</title>
+    <meta name="description" content="박상원 로봇 엔지니어 포트폴리오">
+    <title>Park Sangwon | Robotics Engineer</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,8 +12,8 @@
     <header class="site-header">
         <nav class="nav" aria-label="주요 메뉴">
             <a class="brand" href="#top" aria-label="홈으로 이동">
-                <span class="brand-mark">RE</span>
-                <span>Robot Engineer</span>
+                <span class="brand-mark">PS</span>
+                <span>Park Sangwon</span>
             </a>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
                 <span></span>
@@ -32,11 +32,11 @@
     <main id="top">
         <section class="hero" aria-label="소개">
             <div class="hero-content reveal">
-                <p class="eyebrow">Robotics Portfolio</p>
-                <h1>현실에서 움직이는 로봇 시스템을 설계하고 구현합니다.</h1>
+                <p class="eyebrow">Park Sangwon · Robotics Engineer</p>
+                <h1>로봇 하드웨어와 소프트웨어를 함께 설계하는 엔지니어.</h1>
                 <p class="hero-copy">
-                    센서 데이터, 제어 로직, 임베디드 하드웨어, ROS 기반 소프트웨어를 연결해
-                    안정적으로 동작하는 로봇 시스템을 만드는 로봇 엔지니어 포트폴리오입니다.
+                    ROS2 기반 시뮬레이션, 제어 알고리즘, CAN 통신, 임베디드 시스템 개발 경험을 바탕으로
+                    실제 동작하는 로봇과 드론 시스템을 제작하고 검증합니다.
                 </p>
                 <div class="hero-actions">
                     <a class="button" href="#work">
@@ -55,16 +55,16 @@
                 </div>
                 <div class="stats" aria-label="포트폴리오 요약">
                     <div class="stat">
-                        <strong>ROS</strong>
-                        <span>로봇 미들웨어</span>
+                        <strong>ROS2</strong>
+                        <span>시뮬레이션과 제어 구조</span>
                     </div>
                     <div class="stat">
-                        <strong>Control</strong>
-                        <span>모터 및 구동 제어</span>
+                        <strong>H/W + S/W</strong>
+                        <span>기구 설계와 제어 구현</span>
                     </div>
                     <div class="stat">
-                        <strong>Sensor</strong>
-                        <span>인지와 데이터 처리</span>
+                        <strong>Drone</strong>
+                        <span>설계, 튜닝, 운용 경험</span>
                     </div>
                 </div>
             </div>
@@ -104,28 +104,38 @@
                         <circle cx="280" cy="194" r="8" fill="#f0b442"/>
                     </g>
                     <g class="underwater-robot">
-                        <rect x="156" y="310" width="248" height="96" rx="22" fill="url(#rovBody)"/>
-                        <rect x="196" y="332" width="84" height="38" rx="12" fill="#10222f"/>
-                        <circle cx="226" cy="351" r="10" fill="#62d6c4"/>
-                        <circle cx="250" cy="351" r="10" fill="#62d6c4"/>
-                        <rect x="302" y="328" width="66" height="48" rx="10" fill="#10222f"/>
-                        <path d="M320 352H350" stroke="#f0b442" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M156 352H108" stroke="#b9c8d2" stroke-width="18" stroke-linecap="round"/>
-                        <path d="M404 352H452" stroke="#b9c8d2" stroke-width="18" stroke-linecap="round"/>
-                        <circle cx="94" cy="352" r="28" fill="#f15d3f"/>
-                        <circle cx="466" cy="352" r="28" fill="#f15d3f"/>
-                        <path class="thruster thruster-left" d="M74 336L54 324M74 352H46M74 368L54 380" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
-                        <path class="thruster thruster-right" d="M486 336L506 324M486 352H514M486 368L506 380" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M204 406L184 454M356 406L378 454" stroke="#b9c8d2" stroke-width="16" stroke-linecap="round"/>
-                        <rect x="150" y="446" width="86" height="24" rx="12" fill="#10222f"/>
-                        <rect x="326" y="446" width="86" height="24" rx="12" fill="#10222f"/>
+                        <rect x="166" y="286" width="228" height="128" rx="24" fill="url(#rovBody)"/>
+                        <rect x="198" y="312" width="84" height="42" rx="12" fill="#10222f"/>
+                        <circle cx="226" cy="333" r="10" fill="#62d6c4"/>
+                        <circle cx="252" cy="333" r="10" fill="#62d6c4"/>
+                        <rect x="304" y="306" width="56" height="60" rx="12" fill="#10222f"/>
+                        <path d="M318 336H346" stroke="#f0b442" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M166 334H120M394 334H440" stroke="#b9c8d2" stroke-width="16" stroke-linecap="round"/>
+                        <circle class="vector-thruster" cx="112" cy="306" r="17" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="112" cy="362" r="17" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="448" cy="306" r="17" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="448" cy="362" r="17" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="202" cy="430" r="15" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="250" cy="430" r="15" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="310" cy="430" r="15" fill="#f15d3f"/>
+                        <circle class="vector-thruster" cx="358" cy="430" r="15" fill="#f15d3f"/>
+                        <path class="thruster thruster-left" d="M92 290L72 278M92 306H64M92 322L72 334" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
+                        <path class="thruster thruster-right" d="M468 290L488 278M468 306H496M468 322L488 334" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
+                        <path class="robot-arm left-arm" d="M190 392C154 414 132 438 126 474" fill="none" stroke="#d7e0e6" stroke-width="14" stroke-linecap="round"/>
+                        <path class="robot-arm right-arm" d="M370 392C408 412 430 438 436 474" fill="none" stroke="#d7e0e6" stroke-width="14" stroke-linecap="round"/>
+                        <circle cx="126" cy="474" r="13" fill="#10222f"/>
+                        <circle cx="436" cy="474" r="13" fill="#10222f"/>
+                        <path d="M114 488L138 488M424 488L448 488" stroke="#62d6c4" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M208 286L194 250M352 286L366 250" stroke="#b9c8d2" stroke-width="13" stroke-linecap="round"/>
+                        <rect x="180" y="238" width="44" height="22" rx="11" fill="#10222f"/>
+                        <rect x="336" y="238" width="44" height="22" rx="11" fill="#10222f"/>
                     </g>
                     <path class="sonar sonar-one" d="M282 228C342 244 386 280 410 332" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
                     <path class="sonar sonar-two" d="M282 250C330 264 366 294 386 338" fill="none" stroke="#f0b442" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
                 </svg>
                 <div class="status-card">
-                    <strong>드론 + 수중로봇 시스템</strong>
-                    <span>Drone · ROV · Sensor Link</span>
+                    <strong>Robster-inspired ROV</strong>
+                    <span>Dual Arm · 8 Thrusters · 6DoF</span>
                 </div>
             </div>
         </section>
@@ -133,7 +143,7 @@
         <section class="section" id="work">
             <div class="section-heading reveal">
                 <h2>Robotics Projects</h2>
-                <p>실제 프로젝트를 넣기 전까지 사용할 수 있는 로봇 엔지니어용 프로젝트 예시입니다.</p>
+                <p>기존 포트폴리오의 프로젝트를 중심으로 제작, 제어, 실험 경험을 한눈에 볼 수 있게 정리했습니다.</p>
             </div>
 
             <div class="work-grid">
@@ -148,12 +158,12 @@
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>ROS 기반 로봇 제어 시스템</h3>
-                        <p>토픽, 노드, 센서 데이터를 연결해 로봇 상태를 모니터링하고 구동 명령을 처리하는 구조를 설계합니다.</p>
+                        <h3>Manipulator</h3>
+                        <p>매니퓰레이터 기구부를 설계하고 하드웨어 구성과 제어 시스템을 구현한 프로젝트입니다.</p>
                         <div class="tags">
-                            <span class="tag">ROS</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">C++</span>
+                            <span class="tag">Manipulator</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Control</span>
                         </div>
                     </div>
                 </article>
@@ -169,12 +179,12 @@
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>모터 제어 및 구동부 튜닝</h3>
-                        <p>PID 제어, 속도 제한, 안전 조건을 고려해 실제 구동 환경에서 안정적인 움직임을 만드는 작업입니다.</p>
+                        <h3>Drone Clash</h3>
+                        <p>드론 운용 상황과 충돌 조건을 고려해 구조 설계, 하드웨어 실험, 기체 테스트를 진행했습니다.</p>
                         <div class="tags">
-                            <span class="tag">PID</span>
-                            <span class="tag">Motor</span>
-                            <span class="tag">CAN/UART</span>
+                            <span class="tag">Drone</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Test</span>
                         </div>
                     </div>
                 </article>
@@ -191,12 +201,74 @@
                         </svg>
                     </div>
                     <div class="project-body">
-                        <h3>센서 데이터 처리와 경로 판단</h3>
-                        <p>거리 센서, IMU, 카메라 등에서 들어오는 데이터를 정리해 로봇의 판단 로직에 사용할 수 있게 만듭니다.</p>
+                        <h3>LiDAR Lane Detection</h3>
+                        <p>라이다 데이터를 활용한 차선 검출 알고리즘을 연구하고 자동차공학회 추계학술대회 논문으로 정리했습니다.</p>
                         <div class="tags">
-                            <span class="tag">Sensor Fusion</span>
-                            <span class="tag">IMU</span>
-                            <span class="tag">Vision</span>
+                            <span class="tag">LiDAR</span>
+                            <span class="tag">Algorithm</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-visual visual-control" aria-hidden="true">
+                        <svg viewBox="0 0 420 210">
+                            <rect width="420" height="210" fill="#e8f2f5"/>
+                            <rect x="68" y="64" width="120" height="82" rx="18" fill="#10222f"/>
+                            <circle cx="128" cy="106" r="24" fill="#62d6c4"/>
+                            <rect x="224" y="52" width="116" height="106" rx="18" fill="#ffffff"/>
+                            <path d="M248 92H316M248 120H296" stroke="#f15d3f" stroke-width="11" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="project-body">
+                        <h3>Smart Mirror</h3>
+                        <p>캡스톤 디자인 프로젝트로 스마트 미러의 화면 구성과 소프트웨어 기능을 제작했습니다.</p>
+                        <div class="tags">
+                            <span class="tag">Capstone</span>
+                            <span class="tag">Software</span>
+                            <span class="tag">UI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-visual visual-sensor" aria-hidden="true">
+                        <svg viewBox="0 0 420 210">
+                            <rect width="420" height="210" fill="#f8efe6"/>
+                            <path d="M84 136L210 70L336 136" fill="none" stroke="#10222f" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="210" cy="104" r="34" fill="#f0b442"/>
+                            <path d="M176 154H244" stroke="#f15d3f" stroke-width="14" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="project-body">
+                        <h3>창의적 종합설계 CDP</h3>
+                        <p>배송 드론을 주제로 하드웨어 설계와 제어 프로그램 구성을 수행했습니다.</p>
+                        <div class="tags">
+                            <span class="tag">Drone</span>
+                            <span class="tag">CDP</span>
+                            <span class="tag">Control</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-visual visual-ros" aria-hidden="true">
+                        <svg viewBox="0 0 420 210">
+                            <rect width="420" height="210" fill="#e3edf0"/>
+                            <rect x="62" y="52" width="114" height="106" rx="16" fill="#ffffff"/>
+                            <rect x="202" y="58" width="156" height="92" rx="18" fill="#10222f"/>
+                            <path d="M92 92H146M92 120H132M238 104H322" stroke="#62d6c4" stroke-width="10" stroke-linecap="round"/>
+                            <circle cx="280" cy="104" r="50" fill="none" stroke="#f0b442" stroke-width="10"/>
+                        </svg>
+                    </div>
+                    <div class="project-body">
+                        <h3>BIZCON</h3>
+                        <p>3D 프린팅 경진대회 구동 부문에서 서비스 제작과 구동 구조 설계를 수행했습니다.</p>
+                        <div class="tags">
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Drive Unit</span>
+                            <span class="tag">Prototype</span>
                         </div>
                     </div>
                 </article>
@@ -207,24 +279,28 @@
             <div class="section skill-layout">
                 <div class="reveal">
                     <p class="eyebrow">Skills</p>
-                    <h2>하드웨어와 소프트웨어 사이를 연결하는 엔지니어링.</h2>
+                    <h2>로봇 제작에 필요한 설계, 제어, 개발 기술.</h2>
                     <p class="section-copy">
-                        로봇은 코드만으로 완성되지 않습니다. 센서 신호, 전원, 통신, 제어 주기, 실제 환경의 노이즈까지 함께 고려해야 합니다.
-                        저는 시스템 전체가 안정적으로 움직이는 방향으로 문제를 나누고 검증합니다.
+                        C/C++, Python, ROS, Fusion 360, Mission Planner, Betaflight를 활용해
+                        로봇과 드론 프로젝트를 설계하고 제작하며 실험해 왔습니다.
                     </p>
                 </div>
                 <div class="skill-list reveal" aria-label="핵심 역량">
                     <div class="skill-item">
-                        <strong>Robot Software</strong>
-                        <span>ROS, 노드 설계, 토픽 통신, 시뮬레이션 연동</span>
+                        <strong>C/C++ · Python · ROS</strong>
+                        <span>센서 처리, OpenCV 영상 처리, ROS 기반 로봇 노드 구성</span>
                     </div>
                     <div class="skill-item">
-                        <strong>Embedded Control</strong>
-                        <span>MCU, 모터 드라이버, UART/CAN/I2C 통신</span>
+                        <strong>Fusion 360 · Hardware Design</strong>
+                        <span>로봇 기구부, 구동부, 3D 프린팅 제작을 고려한 구조 설계</span>
                     </div>
                     <div class="skill-item">
-                        <strong>System Integration</strong>
-                        <span>센서 보정, 디버깅, 현장 테스트, 로그 분석</span>
+                        <strong>Mission Planner · Betaflight</strong>
+                        <span>드론 비행 설정, 멀티콥터 파라미터 구성, FPV 기체 튜닝</span>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Embedded · CAN · Sensors</strong>
+                        <span>IR, IMU, 초음파, PSD, Encoder 센서 처리와 CAN 통신 기반 제어</span>
                     </div>
                 </div>
             </div>
@@ -233,28 +309,28 @@
         <section class="section" id="process">
             <div class="section-heading reveal">
                 <h2>Engineering Process</h2>
-                <p>아이디어보다 중요한 것은 실제 환경에서 반복 검증 가능한 구조를 만드는 일이라고 생각합니다.</p>
+                <p>하드웨어 설계에서 제어 구현, 테스트까지 이어지는 제작 중심의 로봇 개발 흐름입니다.</p>
             </div>
             <div class="process">
                 <article class="process-step reveal">
                     <span>01</span>
-                    <h3>Define</h3>
-                    <p>목표 동작, 제약 조건, 실패 조건을 먼저 정리합니다.</p>
+                    <h3>Design</h3>
+                    <p>기구부, 센서, 구동부 배치를 설계하고 제작 조건을 정리합니다.</p>
                 </article>
                 <article class="process-step reveal">
                     <span>02</span>
-                    <h3>Prototype</h3>
-                    <p>센서와 구동부를 빠르게 연결해 기본 동작을 확인합니다.</p>
+                    <h3>Build</h3>
+                    <p>하드웨어 제작과 임베디드/ROS 제어 코드를 함께 구성합니다.</p>
                 </article>
                 <article class="process-step reveal">
                     <span>03</span>
                     <h3>Integrate</h3>
-                    <p>제어 로직, 통신, 상태 관리 구조를 하나의 시스템으로 묶습니다.</p>
+                    <p>센서 데이터, 통신, 제어 주기를 하나의 동작 흐름으로 연결합니다.</p>
                 </article>
                 <article class="process-step reveal">
                     <span>04</span>
                     <h3>Validate</h3>
-                    <p>로그와 현장 테스트로 안정성, 반복성, 예외 상황을 점검합니다.</p>
+                    <p>실험과 튜닝을 반복하며 실제 환경에서의 안정성을 확인합니다.</p>
                 </article>
             </div>
         </section>
@@ -263,8 +339,8 @@
             <div class="contact-panel reveal">
                 <div>
                     <p class="eyebrow">Contact</p>
-                    <h2>로봇 프로젝트와 엔지니어링 협업을 환영합니다.</h2>
-                    <p>이메일로 연락해 주세요. 프로젝트, 연구, 포트폴리오 피드백 모두 열려 있습니다.</p>
+                    <h2>로봇, 드론, 수중로봇 프로젝트 협업을 환영합니다.</h2>
+                    <p>프로젝트 문의, 연구 협업, 포트폴리오 피드백 모두 편하게 연락해 주세요.</p>
                     <p class="email-text">tkddnjs0132@gmail.com</p>
                 </div>
                 <div class="contact-actions">
@@ -288,6 +364,7 @@
                         </svg>
                         GitHub
                     </a>
+                    <a class="button secondary" href="http://robotics-snagwon.kr/sw_Resume/" target="_blank" rel="noreferrer">Old Portfolio</a>
                 </div>
             </div>
         </section>
@@ -295,10 +372,11 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <span>© 2026 Robot Engineer Portfolio.</span>
+            <span>© 2026 Park Sangwon Robotics Portfolio.</span>
             <div class="socials" aria-label="하단 링크">
                 <a href="#work">Projects</a>
                 <a href="#skills">Skills</a>
+                <a href="http://robotics-snagwon.kr/sw_Resume/" target="_blank" rel="noreferrer">Old Portfolio</a>
                 <a href="https://github.com/woni96" target="_blank" rel="noreferrer">GitHub</a>
                 <a href="mailto:tkddnjs0132@gmail.com">Email</a>
             </div>
