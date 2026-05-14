@@ -403,6 +403,16 @@ h2 {
     border-radius: 8px;
     background: var(--surface);
     box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.experience-card:hover,
+.experience-card:focus-visible {
+    outline: none;
+    transform: translateY(-3px);
+    border-color: rgba(98, 214, 196, 0.58);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
 }
 
 .experience-meta {
@@ -431,6 +441,12 @@ h2 {
     margin-bottom: 16px;
     color: var(--muted);
     font-size: 0.96rem;
+}
+
+.tag-action {
+    border-color: rgba(98, 214, 196, 0.52);
+    background: rgba(98, 214, 196, 0.1);
+    color: var(--accent);
 }
 
 .project-card {
