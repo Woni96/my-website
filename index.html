@@ -70,36 +70,62 @@
             </div>
 
             <div class="robot-stage reveal" aria-hidden="true">
-                <div class="scan-line"></div>
+                <div class="water-line"></div>
                 <svg viewBox="0 0 560 560" role="img" aria-label="">
                     <defs>
-                        <linearGradient id="bodyGradient" x1="0" x2="1" y1="0" y2="1">
+                        <linearGradient id="oceanGradient" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0" stop-color="#bfe9f2"/>
+                            <stop offset="0.42" stop-color="#28758c"/>
+                            <stop offset="1" stop-color="#0c2738"/>
+                        </linearGradient>
+                        <linearGradient id="rovBody" x1="0" x2="1" y1="0" y2="1">
                             <stop offset="0" stop-color="#f8fafc"/>
-                            <stop offset="1" stop-color="#cfd8df"/>
+                            <stop offset="1" stop-color="#b9c8d2"/>
                         </linearGradient>
                     </defs>
-                    <circle cx="280" cy="280" r="236" fill="#10222f"/>
-                    <path class="orbit orbit-one" d="M86 286C142 140 418 140 474 286" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round"/>
-                    <path class="orbit orbit-two" d="M86 286C142 432 418 432 474 286" fill="none" stroke="#f0b442" stroke-width="4" stroke-linecap="round"/>
-                    <rect x="166" y="150" width="228" height="196" rx="34" fill="url(#bodyGradient)"/>
-                    <rect x="204" y="190" width="152" height="66" rx="20" fill="#111827"/>
-                    <circle class="robot-eye left" cx="242" cy="223" r="13" fill="#62d6c4"/>
-                    <circle class="robot-eye right" cx="318" cy="223" r="13" fill="#62d6c4"/>
-                    <path d="M234 292H326" stroke="#15202b" stroke-width="12" stroke-linecap="round"/>
-                    <path d="M166 238H110C94 238 82 250 82 266V316" fill="none" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
-                    <path d="M394 238H450C466 238 478 250 478 266V316" fill="none" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
-                    <circle cx="82" cy="326" r="28" fill="#f15d3f"/>
-                    <circle cx="478" cy="326" r="28" fill="#f15d3f"/>
-                    <rect x="206" y="346" width="148" height="86" rx="18" fill="#f8fafc"/>
-                    <path d="M236 388H324" stroke="#62d6c4" stroke-width="12" stroke-linecap="round"/>
-                    <path d="M214 432L184 506" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
-                    <path d="M346 432L376 506" stroke="#cfd8df" stroke-width="22" stroke-linecap="round"/>
-                    <rect x="134" y="496" width="92" height="28" rx="14" fill="#111827"/>
-                    <rect x="334" y="496" width="92" height="28" rx="14" fill="#111827"/>
+                    <rect width="560" height="560" rx="34" fill="url(#oceanGradient)"/>
+                    <path class="wave wave-one" d="M0 188C72 164 126 214 196 188C270 160 338 214 414 188C478 166 520 178 560 194V0H0Z" fill="#d8f7fb" opacity="0.8"/>
+                    <path class="wave wave-two" d="M0 224C80 196 134 248 210 222C282 198 340 236 420 214C482 196 526 208 560 224V560H0Z" fill="#155a72" opacity="0.28"/>
+                    <g class="bubble-stream">
+                        <circle cx="104" cy="432" r="8" fill="#bff6ff" opacity="0.75"/>
+                        <circle cx="132" cy="386" r="5" fill="#bff6ff" opacity="0.58"/>
+                        <circle cx="86" cy="348" r="6" fill="#bff6ff" opacity="0.68"/>
+                        <circle cx="456" cy="416" r="7" fill="#bff6ff" opacity="0.62"/>
+                        <circle cx="482" cy="366" r="4" fill="#bff6ff" opacity="0.56"/>
+                    </g>
+                    <g class="drone">
+                        <path d="M250 126H310" stroke="#10222f" stroke-width="12" stroke-linecap="round"/>
+                        <rect x="250" y="96" width="60" height="42" rx="14" fill="#f8fafc"/>
+                        <circle cx="238" cy="126" r="14" fill="#10222f"/>
+                        <circle cx="322" cy="126" r="14" fill="#10222f"/>
+                        <path class="propeller propeller-left" d="M200 126H276" stroke="#f8fafc" stroke-width="8" stroke-linecap="round"/>
+                        <path class="propeller propeller-right" d="M284 126H360" stroke="#f8fafc" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M280 138V184" stroke="#10222f" stroke-width="6" stroke-linecap="round" stroke-dasharray="7 9"/>
+                        <circle cx="280" cy="194" r="8" fill="#f0b442"/>
+                    </g>
+                    <g class="underwater-robot">
+                        <rect x="156" y="310" width="248" height="96" rx="22" fill="url(#rovBody)"/>
+                        <rect x="196" y="332" width="84" height="38" rx="12" fill="#10222f"/>
+                        <circle cx="226" cy="351" r="10" fill="#62d6c4"/>
+                        <circle cx="250" cy="351" r="10" fill="#62d6c4"/>
+                        <rect x="302" y="328" width="66" height="48" rx="10" fill="#10222f"/>
+                        <path d="M320 352H350" stroke="#f0b442" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M156 352H108" stroke="#b9c8d2" stroke-width="18" stroke-linecap="round"/>
+                        <path d="M404 352H452" stroke="#b9c8d2" stroke-width="18" stroke-linecap="round"/>
+                        <circle cx="94" cy="352" r="28" fill="#f15d3f"/>
+                        <circle cx="466" cy="352" r="28" fill="#f15d3f"/>
+                        <path class="thruster thruster-left" d="M74 336L54 324M74 352H46M74 368L54 380" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
+                        <path class="thruster thruster-right" d="M486 336L506 324M486 352H514M486 368L506 380" stroke="#bff6ff" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M204 406L184 454M356 406L378 454" stroke="#b9c8d2" stroke-width="16" stroke-linecap="round"/>
+                        <rect x="150" y="446" width="86" height="24" rx="12" fill="#10222f"/>
+                        <rect x="326" y="446" width="86" height="24" rx="12" fill="#10222f"/>
+                    </g>
+                    <path class="sonar sonar-one" d="M282 228C342 244 386 280 410 332" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <path class="sonar sonar-two" d="M282 250C330 264 366 294 386 338" fill="none" stroke="#f0b442" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
                 </svg>
                 <div class="status-card">
-                    <strong>System Online</strong>
-                    <span>ROS · Control · Embedded</span>
+                    <strong>드론 + 수중로봇 시스템</strong>
+                    <span>Drone · ROV · Sensor Link</span>
                 </div>
             </div>
         </section>

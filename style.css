@@ -258,9 +258,9 @@ h2 {
     border: 1px solid var(--line);
     border-radius: 8px;
     background:
-        linear-gradient(rgba(98, 214, 196, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(98, 214, 196, 0.08) 1px, transparent 1px),
-        linear-gradient(145deg, #0f2230 0%, #173447 55%, #edf3f5 100%);
+        linear-gradient(rgba(191, 246, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 246, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(145deg, #0b2232 0%, #14566c 54%, #d8f7fb 100%);
     background-size: 28px 28px, 28px 28px, auto;
     box-shadow: var(--shadow);
 }
@@ -270,27 +270,55 @@ h2 {
     transform: translateY(10px);
 }
 
-.scan-line {
+.water-line {
     position: absolute;
     left: 10%;
     right: 10%;
-    top: 18%;
-    height: 2px;
-    background: rgba(98, 214, 196, 0.9);
-    box-shadow: 0 0 20px rgba(98, 214, 196, 0.85);
-    animation: scan 3.2s ease-in-out infinite;
+    top: 38%;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(216, 247, 251, 0.88);
+    box-shadow: 0 0 24px rgba(191, 246, 255, 0.78);
+    animation: waterShift 3.2s ease-in-out infinite;
 }
 
-.robot-eye {
-    animation: blink 4s ease-in-out infinite;
+.drone {
+    animation: droneHover 3.2s ease-in-out infinite;
 }
 
-.orbit-one {
-    animation: pulse 2.8s ease-in-out infinite;
+.propeller {
+    animation: propellerSpin 260ms linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
 }
 
-.orbit-two {
-    animation: pulse 2.8s ease-in-out 0.7s infinite;
+.underwater-robot {
+    animation: rovGlide 4.4s ease-in-out infinite;
+}
+
+.thruster {
+    animation: thrusterPulse 900ms ease-in-out infinite;
+}
+
+.bubble-stream {
+    animation: bubblesRise 3.8s ease-in-out infinite;
+}
+
+.wave-one {
+    animation: waveDrift 5s ease-in-out infinite;
+}
+
+.wave-two {
+    animation: waveDrift 6.5s ease-in-out reverse infinite;
+}
+
+.sonar-one,
+.sonar-two {
+    animation: sonarPulse 2.2s ease-in-out infinite;
+}
+
+.sonar-two {
+    animation-delay: 0.45s;
 }
 
 .status-card {
@@ -560,41 +588,107 @@ h2 {
     transform: translateY(0);
 }
 
-@keyframes scan {
+@keyframes waterShift {
     0%,
     100% {
-        transform: translateY(0);
-        opacity: 0.4;
+        transform: translateY(0) scaleX(0.94);
+        opacity: 0.48;
     }
 
     50% {
-        transform: translateY(330px);
+        transform: translateY(8px) scaleX(1);
         opacity: 1;
     }
 }
 
-@keyframes blink {
-    0%,
-    92%,
-    100% {
-        transform: scaleY(1);
-        transform-origin: center;
-    }
-
-    95% {
-        transform: scaleY(0.15);
-        transform-origin: center;
-    }
-}
-
-@keyframes pulse {
+@keyframes droneHover {
     0%,
     100% {
-        opacity: 0.45;
+        transform: translateY(0) rotate(-1deg);
     }
 
     50% {
+        transform: translateY(-14px) rotate(1.4deg);
+    }
+}
+
+@keyframes propellerSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rovGlide {
+    0%,
+    100% {
+        transform: translateX(-8px) translateY(4px);
+    }
+
+    50% {
+        transform: translateX(10px) translateY(-5px);
+    }
+}
+
+@keyframes thrusterPulse {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes bubblesRise {
+    0%,
+    100% {
+        transform: translateY(18px);
+        opacity: 0.62;
+    }
+
+    50% {
+        transform: translateY(-24px);
         opacity: 1;
+    }
+}
+
+@keyframes waveDrift {
+    0%,
+    100% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(12px);
+    }
+}
+
+@keyframes sonarPulse {
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: translateX(-4px);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: translateX(6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
