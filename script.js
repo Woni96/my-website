@@ -48,7 +48,7 @@ const projectDetails = {
                 ]
             },
             {
-                title: "해수 배관 로봇 · Pyper",
+                title: "해수 배관 로봇",
                 items: [
                     "3축 조이스틱, 스위치, 엔코더 연결 PCB 제작",
                     "STM32 기반 조이스틱·스위치·엔코더 통신 구현",
@@ -58,7 +58,7 @@ const projectDetails = {
                 ]
             },
             {
-                title: "수중로봇 · Robster",
+                title: "수중로봇",
                 items: [
                     "ArduPilot 기반 제어 시스템 구축",
                     "6DoF 제어 시스템 및 커스텀 MCU 보드 제어 코드 작성",
@@ -162,7 +162,7 @@ const projectDetails = {
         ]
     },
     robster: {
-        title: "수중로봇 Robster",
+        title: "수중로봇",
         period: "(주)칼만 · 2024.03 - 재직 중",
         summary: "ArduPilot 기반 제어 시스템과 커스텀 MCU 보드를 이용해 6DoF 수중로봇 제어, Robot Arm 연동, 현장 운용까지 수행한 수중 작업 로봇 프로젝트입니다.",
         sections: [
