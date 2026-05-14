@@ -34,10 +34,15 @@
         <section class="hero" aria-label="소개">
             <div class="hero-content reveal">
                 <p class="eyebrow">Park Sangwon · Robotics Engineer</p>
-                <h1>로봇 하드웨어와 소프트웨어를 함께 설계하는 엔지니어.</h1>
+
+                <h1>
+                설계에서 현장 운용까지 연결하는 Robotics Engineer.
+                </h1>
+
                 <p class="hero-copy">
-                    원전 현장 로봇, 수중로봇, 비행로봇, 4족보행 로봇의 전장·제어·임베디드·ROS 시스템을
-                    설계하고 실제 현장 운용과 납품까지 연결해 온 System Engineer입니다.
+                수중로봇, 드론, 4족보행 로봇, 산업 로봇의
+                전장·임베디드·제어·ROS 시스템을 직접 개발하고,
+                원전 및 산업 현장 운용과 납품까지 수행해왔습니다.
                 </p>
                 <div class="hero-actions">
                     <a class="button" href="#work">
@@ -235,7 +240,7 @@
             </div>
 
             <div class="work-grid">
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="robster" tabindex="0" role="button" aria-label="수중로봇 Robster 상세 보기">
                     <div class="project-visual visual-dark" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#10222f"/>
@@ -264,7 +269,7 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="quadruped" tabindex="0" role="button" aria-label="4족보행 로봇 상세 보기">
                     <div class="project-visual visual-control" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#101820"/>
@@ -294,7 +299,7 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="drone" tabindex="0" role="button" aria-label="비행로봇 Indoor Drone 상세 보기">
                     <div class="project-visual visual-sensor" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#111820"/>
@@ -320,7 +325,7 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="condenser" tabindex="0" role="button" aria-label="복수기 로봇 상세 보기">
                     <div class="project-visual visual-ros" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#0e1820"/>
@@ -345,7 +350,7 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="pyper" tabindex="0" role="button" aria-label="해수 배관 로봇 Pyper 상세 보기">
                     <div class="project-visual visual-dark" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#13202b"/>
@@ -370,7 +375,7 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-project="lidar" tabindex="0" role="button" aria-label="LiDAR Sensor Research 상세 보기">
                     <div class="project-visual visual-sensor" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
                             <rect width="420" height="210" fill="#111820"/>
@@ -492,6 +497,21 @@
             </div>
         </section>
     </main>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-backdrop" data-close-project></div>
+        <section class="project-detail" role="dialog" aria-modal="true" aria-labelledby="project-detail-title">
+            <button class="modal-close" type="button" data-close-project aria-label="프로젝트 상세 닫기">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <p class="eyebrow" id="project-detail-period">Project Detail</p>
+            <h2 id="project-detail-title"></h2>
+            <p class="project-detail-summary" id="project-detail-summary"></p>
+            <div class="project-detail-grid" id="project-detail-grid"></div>
+        </section>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
