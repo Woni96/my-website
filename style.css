@@ -717,13 +717,11 @@ h2 {
 }
 
 .mcu-icon,
-.pcb-icon,
-.drone-icon {
+.pcb-icon {
     color: var(--accent-2);
 }
 
-.lidar-icon,
-.android-icon {
+.lidar-icon {
     color: #9ba8ff;
 }
 
