@@ -12,7 +12,7 @@
     <header class="site-header">
         <nav class="nav" aria-label="주요 메뉴">
             <a class="brand" href="#top" aria-label="홈으로 이동">
-                <span class="brand-mark">PS</span>
+                <span class="brand-mark">SW</span>
                 <span>Park Sangwon</span>
             </a>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
@@ -247,15 +247,31 @@
                 <article class="project-card reveal" data-project="robster" tabindex="0" role="button" aria-label="수중로봇 상세 보기">
                     <div class="project-visual visual-dark" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#10222f"/>
-                            <rect x="72" y="72" width="196" height="72" rx="22" fill="#1c2832"/>
-                            <circle cx="288" cy="108" r="44" fill="#d9e1e6"/>
-                            <circle cx="288" cy="108" r="22" fill="#111820"/>
-                            <path d="M116 72L96 40M222 72L246 40M122 144L100 174M230 144L252 174" stroke="#6c7880" stroke-width="12" stroke-linecap="round"/>
-                            <circle cx="96" cy="40" r="15" fill="#f15d3f"/>
-                            <circle cx="246" cy="40" r="15" fill="#f15d3f"/>
-                            <circle cx="100" cy="174" r="15" fill="#f15d3f"/>
-                            <circle cx="252" cy="174" r="15" fill="#f15d3f"/>
+                            <defs>
+                                <linearGradient id="rovCardBody" x1="80" y1="64" x2="300" y2="150">
+                                    <stop stop-color="#0b0f14"/>
+                                    <stop offset="0.55" stop-color="#2a3035"/>
+                                    <stop offset="1" stop-color="#05070a"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="420" height="210" fill="#071016"/>
+                            <path d="M34 156C92 128 154 126 222 148C282 168 340 158 388 128" fill="none" stroke="#163141" stroke-width="2" opacity="0.8"/>
+                            <path d="M38 48C98 70 158 72 210 52C276 26 334 40 382 68" fill="none" stroke="#123344" stroke-width="2" opacity="0.7"/>
+                            <ellipse cx="190" cy="106" rx="92" ry="46" fill="url(#rovCardBody)"/>
+                            <circle cx="270" cy="106" r="40" fill="#3d4448"/>
+                            <circle cx="270" cy="106" r="29" fill="#0b0f14"/>
+                            <circle cx="270" cy="106" r="18" fill="#162936"/>
+                            <path d="M108 76L82 50M108 136L80 160M236 70L270 42M236 142L270 170" stroke="#555f66" stroke-width="11" stroke-linecap="round"/>
+                            <g fill="#1d2429" stroke="#7d888f" stroke-width="4">
+                                <circle cx="78" cy="46" r="16"/>
+                                <circle cx="76" cy="164" r="16"/>
+                                <circle cx="274" cy="38" r="16"/>
+                                <circle cx="274" cy="174" r="16"/>
+                            </g>
+                            <path d="M62 46h32M60 164h32M258 38h32M258 174h32" stroke="#f15d3f" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M304 112h44l22 18M304 126h34l24 34" stroke="#6c7880" stroke-width="9" stroke-linecap="round"/>
+                            <path d="M366 128l20 14M358 160l20 8" stroke="#f15d3f" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M150 62h50M144 150h76" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
                         </svg>
                     </div>
                     <div class="project-body">
@@ -276,16 +292,20 @@
                 <article class="project-card reveal" data-project="quadruped" tabindex="0" role="button" aria-label="4족보행 로봇 상세 보기">
                     <div class="project-visual visual-control" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#101820"/>
-                            <rect x="80" y="64" width="110" height="82" rx="18" fill="#10222f"/>
-                            <path d="M116 146L98 180M156 146L178 180" stroke="#10222f" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M110 64L92 34M160 64L182 34" stroke="#10222f" stroke-width="12" stroke-linecap="round"/>
-                            <circle cx="92" cy="34" r="14" fill="#62d6c4"/>
-                            <circle cx="182" cy="34" r="14" fill="#62d6c4"/>
-                            <circle cx="98" cy="180" r="14" fill="#62d6c4"/>
-                            <circle cx="178" cy="180" r="14" fill="#62d6c4"/>
-                            <rect x="230" y="58" width="112" height="94" rx="18" fill="#d9e1e6"/>
-                            <path d="M254 92H316M254 122H302" stroke="#f15d3f" stroke-width="10" stroke-linecap="round"/>
+                            <rect width="420" height="210" fill="#071018"/>
+                            <path d="M44 166H376" stroke="#20303a" stroke-width="5" stroke-linecap="round"/>
+                            <rect x="128" y="68" width="152" height="54" rx="18" fill="#1d2932"/>
+                            <rect x="160" y="50" width="76" height="22" rx="8" fill="#33404a"/>
+                            <circle cx="266" cy="86" r="8" fill="#62d6c4"/>
+                            <circle cx="286" cy="86" r="8" fill="#62d6c4"/>
+                            <path d="M148 118L126 144L110 166M174 120L168 150L184 174M236 120L248 150L238 174M264 118L292 144L318 166" fill="none" stroke="#687781" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M110 166h34M174 174h34M226 174h34M306 166h34" stroke="#f0b442" stroke-width="9" stroke-linecap="round"/>
+                            <rect x="58" y="58" width="44" height="84" rx="10" fill="#d9e1e6"/>
+                            <path d="M80 74v48M66 92h28M66 110h28" stroke="#f15d3f" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M94 86C122 78 128 82 142 94" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 7"/>
+                            <path d="M286 88C314 82 336 90 356 112" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 7"/>
+                            <rect x="336" y="104" width="42" height="52" rx="8" fill="#13222d"/>
+                            <path d="M348 122h18M348 138h12" stroke="#d9e1e6" stroke-width="5" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-body">
@@ -306,12 +326,20 @@
                 <article class="project-card reveal" data-project="drone" tabindex="0" role="button" aria-label="비행로봇 Indoor Drone 상세 보기">
                     <div class="project-visual visual-sensor" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#111820"/>
-                            <path d="M72 94H348M112 54V134M308 54V134" stroke="#10222f" stroke-width="12" stroke-linecap="round"/>
-                            <circle cx="112" cy="94" r="34" fill="#f15d3f"/>
-                            <circle cx="308" cy="94" r="34" fill="#f15d3f"/>
-                            <rect x="170" y="70" width="80" height="50" rx="14" fill="#d9e1e6"/>
-                            <path d="M190 154L232 154M210 120V174" stroke="#f0b442" stroke-width="10" stroke-linecap="round"/>
+                            <rect width="420" height="210" fill="#081018"/>
+                            <path d="M76 60C120 34 170 36 210 72C250 36 300 34 344 60" fill="none" stroke="#102936" stroke-width="2"/>
+                            <path d="M90 94H330M210 62V138" stroke="#60707a" stroke-width="10" stroke-linecap="round"/>
+                            <circle cx="100" cy="94" r="38" fill="none" stroke="#293842" stroke-width="9"/>
+                            <circle cx="320" cy="94" r="38" fill="none" stroke="#293842" stroke-width="9"/>
+                            <circle cx="210" cy="62" r="38" fill="none" stroke="#293842" stroke-width="9"/>
+                            <circle cx="210" cy="138" r="38" fill="none" stroke="#293842" stroke-width="9"/>
+                            <path d="M74 94h52M294 94h52M184 62h52M184 138h52" stroke="#f15d3f" stroke-width="5" stroke-linecap="round"/>
+                            <rect x="176" y="82" width="68" height="46" rx="13" fill="#d9e1e6"/>
+                            <circle cx="210" cy="105" r="12" fill="#111820"/>
+                            <path d="M210 128v34M188 162h44" stroke="#f0b442" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M250 112C284 124 308 146 326 176" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 8"/>
+                            <rect x="306" y="162" width="42" height="20" rx="4" fill="#10222f"/>
+                            <path d="M316 172h22" stroke="#62d6c4" stroke-width="4" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-body">
@@ -332,11 +360,23 @@
                 <article class="project-card reveal" data-project="condenser" tabindex="0" role="button" aria-label="복수기 로봇 상세 보기">
                     <div class="project-visual visual-ros" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#0e1820"/>
-                            <rect x="54" y="74" width="156" height="64" rx="18" fill="#10222f"/>
-                            <rect x="240" y="48" width="104" height="116" rx="16" fill="#d9e1e6"/>
-                            <path d="M86 106H178M268 80H316M268 106H326M268 132H306" stroke="#62d6c4" stroke-width="10" stroke-linecap="round"/>
-                            <circle cx="112" cy="106" r="42" fill="none" stroke="#f0b442" stroke-width="10"/>
+                            <rect width="420" height="210" fill="#071018"/>
+                            <rect x="42" y="64" width="336" height="86" rx="43" fill="#17242e"/>
+                            <rect x="62" y="84" width="296" height="46" rx="23" fill="#0c151d"/>
+                            <g fill="none" stroke="#324552" stroke-width="6">
+                                <circle cx="102" cy="107" r="28"/>
+                                <circle cx="158" cy="107" r="28"/>
+                                <circle cx="214" cy="107" r="28"/>
+                                <circle cx="270" cy="107" r="28"/>
+                                <circle cx="326" cy="107" r="28"/>
+                            </g>
+                            <rect x="120" y="76" width="158" height="62" rx="16" fill="#d9e1e6"/>
+                            <rect x="140" y="92" width="44" height="30" rx="8" fill="#10222f"/>
+                            <circle cx="162" cy="107" r="10" fill="#f0b442"/>
+                            <path d="M206 96h46M206 116h34" stroke="#f15d3f" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M276 108h42l28 26" stroke="#62d6c4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M338 134h28" stroke="#62d6c4" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M84 156h260" stroke="#f0b442" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 14"/>
                         </svg>
                     </div>
                     <div class="project-body">
@@ -357,11 +397,21 @@
                 <article class="project-card reveal" data-project="pyper" tabindex="0" role="button" aria-label="해수 배관 로봇 상세 보기">
                     <div class="project-visual visual-dark" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#13202b"/>
-                            <rect x="74" y="56" width="110" height="98" rx="16" fill="#d9e1e6"/>
-                            <rect x="220" y="52" width="124" height="106" rx="18" fill="#1c2832"/>
-                            <path d="M104 88H154M104 116H142M252 86H314M252 116H302" stroke="#62d6c4" stroke-width="9" stroke-linecap="round"/>
-                            <path d="M282 158V184M258 184H306" stroke="#f15d3f" stroke-width="10" stroke-linecap="round"/>
+                            <rect width="420" height="210" fill="#071018"/>
+                            <circle cx="210" cy="106" r="86" fill="none" stroke="#263946" stroke-width="22"/>
+                            <circle cx="210" cy="106" r="50" fill="none" stroke="#10222f" stroke-width="12"/>
+                            <rect x="118" y="84" width="184" height="44" rx="22" fill="#d9e1e6"/>
+                            <rect x="152" y="68" width="116" height="76" rx="16" fill="#1c2832"/>
+                            <path d="M170 90h80M170 112h62" stroke="#62d6c4" stroke-width="8" stroke-linecap="round"/>
+                            <g fill="#0b1117" stroke="#f0b442" stroke-width="5">
+                                <circle cx="142" cy="84" r="15"/>
+                                <circle cx="142" cy="128" r="15"/>
+                                <circle cx="278" cy="84" r="15"/>
+                                <circle cx="278" cy="128" r="15"/>
+                            </g>
+                            <path d="M96 106h42M282 106h42" stroke="#f15d3f" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M324 106c24 0 42 14 48 34M96 106c-24 0-42 14-48 34" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 8"/>
+                            <rect x="182" y="152" width="56" height="18" rx="9" fill="#f15d3f"/>
                         </svg>
                     </div>
                     <div class="project-body">
@@ -382,12 +432,20 @@
                 <article class="project-card reveal" data-project="lidar" tabindex="0" role="button" aria-label="LiDAR Sensor Research 상세 보기">
                     <div class="project-visual visual-sensor" aria-hidden="true">
                         <svg viewBox="0 0 420 210">
-                            <rect width="420" height="210" fill="#111820"/>
-                            <path d="M58 156C112 58 234 42 356 86" fill="none" stroke="#10222f" stroke-width="14" stroke-linecap="round"/>
-                            <circle cx="104" cy="132" r="22" fill="#62d6c4"/>
-                            <circle cx="202" cy="80" r="18" fill="#f0b442"/>
-                            <circle cx="314" cy="82" r="26" fill="#f15d3f"/>
-                            <rect x="66" y="160" width="288" height="18" rx="9" fill="#d9e1e6"/>
+                            <rect width="420" height="210" fill="#081018"/>
+                            <path d="M50 158h320" stroke="#263946" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M96 142l30-38h92l42 38z" fill="#d9e1e6"/>
+                            <rect x="128" y="84" width="64" height="26" rx="6" fill="#10222f"/>
+                            <rect x="204" y="92" width="42" height="18" rx="5" fill="#10222f"/>
+                            <circle cx="126" cy="150" r="18" fill="#111820" stroke="#62d6c4" stroke-width="6"/>
+                            <circle cx="240" cy="150" r="18" fill="#111820" stroke="#62d6c4" stroke-width="6"/>
+                            <rect x="170" y="70" width="36" height="18" rx="6" fill="#f0b442"/>
+                            <path d="M188 70V48" stroke="#f0b442" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M188 48C246 42 304 56 354 88M188 48C240 62 284 92 316 134M188 48C142 60 104 90 76 134" fill="none" stroke="#62d6c4" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="354" cy="88" r="8" fill="#f15d3f"/>
+                            <circle cx="316" cy="134" r="7" fill="#f15d3f"/>
+                            <circle cx="76" cy="134" r="7" fill="#f15d3f"/>
+                            <path d="M80 180C140 162 200 162 260 180C296 190 332 188 366 174" fill="none" stroke="#f0b442" stroke-width="3" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-body">
