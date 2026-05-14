@@ -10,6 +10,10 @@ const projectPeriod = document.querySelector("#project-detail-period");
 const projectSummary = document.querySelector("#project-detail-summary");
 const projectGrid = document.querySelector("#project-detail-grid");
 const projectCloseItems = document.querySelectorAll("[data-close-project]");
+const awardOpenButton = document.querySelector("[data-open-awards]");
+const awardsModal = document.querySelector("#awards-modal");
+const awardTableBody = document.querySelector("#award-table-body");
+const awardCloseItems = document.querySelectorAll("[data-close-awards]");
 
 const projectDetails = {
     "company-kalman": {
@@ -370,6 +374,147 @@ const projectDetails = {
     }
 };
 
+const awardItems = [
+    {
+        date: "2016.05.28",
+        rank: "은상",
+        name: "2016 이그나이트 스토리텔링",
+        organizer: "ITC로봇문화협회"
+    },
+    {
+        date: "2016.07.02",
+        rank: "장려상",
+        name: "2016 스마트로봇경진대회",
+        organizer: "대한전자공학회"
+    },
+    {
+        date: "2016.10.16",
+        rank: "은상",
+        name: "2016 국제로봇컨테스트 AIR-SPORTS",
+        organizer: "한국로봇산업진흥원"
+    },
+    {
+        date: "2016.11.08",
+        rank: "우수상",
+        name: "2016 청년취업아카데미 창직과정",
+        organizer: "김포대학교 창업교육센터"
+    },
+    {
+        date: "2016.12.06",
+        rank: "어워드상",
+        name: "2016 청년취업아카데미 창직과정",
+        organizer: "한국생산성본부"
+    },
+    {
+        date: "2016.12.06",
+        rank: "은상",
+        name: "2016 창직어워드 연말경진대회",
+        organizer: "한국산업인력공단"
+    },
+    {
+        date: "2017.05.25",
+        rank: "대상",
+        name: "2017 이그나이트 스토리텔링",
+        organizer: "인천광역시"
+    },
+    {
+        date: "2017.07.08",
+        rank: "대상",
+        name: "2017 스마트로봇경진대회",
+        organizer: "경기도지사"
+    },
+    {
+        date: "2017.09.08",
+        rank: "장려상",
+        name: "2017 국제로봇컨테스트 AIR-SPORTS",
+        organizer: "ITC로봇문화협회"
+    },
+    {
+        date: "2017.12.21",
+        rank: "장려상",
+        name: "제3회 김포대학교 캡스톤디자인 경진대회",
+        organizer: "김포대학교 창업교육센터"
+    },
+    {
+        date: "2019.11.15",
+        rank: "장려상",
+        name: "2019 WCRC 2차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇교육콘텐츠협회"
+    },
+    {
+        date: "2019.12.22",
+        rank: "장려상",
+        name: "2019 WCRC 3차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇교육콘텐츠협회"
+    },
+    {
+        date: "2020.10.29",
+        rank: "은상",
+        name: "2020 WCRC 1차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇산업진흥원"
+    },
+    {
+        date: "2020.12.26",
+        rank: "금상",
+        name: "2020 WCRC 2차 본선 (물류로봇이동/대학일반부)",
+        organizer: "과학기술정보통신부장관"
+    },
+    {
+        date: "2021.07.31",
+        rank: "동상",
+        name: "2021 WCRC 2차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇산업진흥원"
+    },
+    {
+        date: "2021.10.08",
+        rank: "준우승",
+        name: "제2회 한국대학드론축구대회",
+        organizer: "대학드론축구협회"
+    },
+    {
+        date: "2021.10.16",
+        rank: "준우승",
+        name: "2021 울산드론미션대회",
+        organizer: "경남일보"
+    },
+    {
+        date: "2021.10.23",
+        rank: "장려상",
+        name: "2021 WCRC 3차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇교육콘텐츠협회"
+    },
+    {
+        date: "2021.11.04",
+        rank: "장려상",
+        name: "한국교통대학교 LINC+사업단 드론사진,영상(드론사진)",
+        organizer: "한국교통대학교 LINC+사업단장"
+    },
+    {
+        date: "2021.11.04",
+        rank: "우수상",
+        name: "한국교통대학교 LINC+사업단 드론사진,영상(드론영상)",
+        organizer: "한국교통대학교 LINC+사업단장"
+    },
+    {
+        date: "2021.12.18",
+        rank: "장려상",
+        name: "2021 WCRC 4차 본선 (물류로봇이동/대학일반부)",
+        organizer: "한국로봇산업진흥원"
+    },
+    {
+        date: "2022.09.03",
+        rank: "준우승",
+        name: "2022 경상북도 전국드론축구대회",
+        organizer: "대한드론축구협회"
+    },
+    {
+        date: "2023.11.25",
+        rank: "우수상",
+        name: "제8회 3D프린팅 BIZCON 경진대회(구동부문)",
+        organizer: "구미대학교총장"
+    }
+];
+
 if (menuButton && navLinks) {
     menuButton.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("is-open");
@@ -468,6 +613,35 @@ const openProjectModal = (projectKey) => {
     document.body.classList.add("modal-open");
 };
 
+const closeAwardsModal = () => {
+    if (!awardsModal) {
+        return;
+    }
+
+    awardsModal.classList.remove("is-open");
+    awardsModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+};
+
+const openAwardsModal = () => {
+    if (!awardsModal || !awardTableBody) {
+        return;
+    }
+
+    awardTableBody.innerHTML = awardItems.map((award) => `
+        <tr>
+            <td>${award.date}</td>
+            <td><span class="award-badge">${award.rank}</span></td>
+            <td>${award.name}</td>
+            <td>${award.organizer}</td>
+        </tr>
+    `).join("");
+
+    awardsModal.classList.add("is-open");
+    awardsModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+};
+
 projectCards.forEach((card) => {
     card.addEventListener("click", () => openProjectModal(card.dataset.project));
     card.addEventListener("keydown", (event) => {
@@ -482,8 +656,17 @@ projectCloseItems.forEach((item) => {
     item.addEventListener("click", closeProjectModal);
 });
 
+if (awardOpenButton) {
+    awardOpenButton.addEventListener("click", openAwardsModal);
+}
+
+awardCloseItems.forEach((item) => {
+    item.addEventListener("click", closeAwardsModal);
+});
+
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         closeProjectModal();
+        closeAwardsModal();
     }
 });

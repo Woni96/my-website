@@ -23,6 +23,7 @@
             <div class="nav-links" id="site-menu">
                 <a href="#experience">Experience</a>
                 <a href="#work">Projects</a>
+                <a href="#awards">Awards</a>
                 <a href="#skills">Skills</a>
                 <a href="#process">Process</a>
                 <a href="#contact">Contact</a>
@@ -465,6 +466,48 @@
             </div>
         </section>
 
+        <section class="section" id="awards">
+            <div class="section-heading reveal">
+                <h2>Awards</h2>
+                <p>로봇, 드론, 창작/기술 경진대회 수상 중 상급이 높은 주요 성과만 선별했습니다.</p>
+            </div>
+
+            <div class="award-summary reveal">
+                <div>
+                    <p class="eyebrow">Competition Results</p>
+                    <h3>대상·금상·준우승 중심의 핵심 수상</h3>
+                    <p>
+                        2016년부터 2023년까지 로봇 제작, 물류로봇, 드론 미션, 3D 프린팅 경진대회에서
+                        꾸준히 수상했습니다. 전체 수상 목록은 버튼을 눌러 확인할 수 있습니다.
+                    </p>
+                </div>
+                <button class="button secondary" type="button" data-open-awards>전체 수상 보기</button>
+            </div>
+
+            <div class="award-grid">
+                <article class="award-card reveal">
+                    <span class="award-rank">대상</span>
+                    <strong>2017 스마트로봇경진대회</strong>
+                    <p>경기도지사 · 2017.07.08</p>
+                </article>
+                <article class="award-card reveal">
+                    <span class="award-rank">대상</span>
+                    <strong>2017 이그나이트 스토리텔링</strong>
+                    <p>인천광역시 · 2017.05.25</p>
+                </article>
+                <article class="award-card reveal">
+                    <span class="award-rank">금상</span>
+                    <strong>2020 WCRC 2차 본선</strong>
+                    <p>과학기술정보통신부장관 · 물류로봇이동</p>
+                </article>
+                <article class="award-card reveal">
+                    <span class="award-rank">준우승</span>
+                    <strong>2022 경상북도 전국드론축구대회</strong>
+                    <p>대한드론축구협회 · 2022.09.03</p>
+                </article>
+            </div>
+        </section>
+
         <section class="skill-band" id="skills">
             <div class="section">
                 <div class="skill-intro reveal">
@@ -763,11 +806,39 @@
         </section>
     </div>
 
+    <div class="project-modal" id="awards-modal" aria-hidden="true">
+        <div class="project-modal-backdrop" data-close-awards></div>
+        <section class="project-detail award-detail" role="dialog" aria-modal="true" aria-labelledby="awards-detail-title">
+            <button class="modal-close" type="button" data-close-awards aria-label="전체 수상 닫기">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <p class="eyebrow">Award List</p>
+            <h2 id="awards-detail-title">전체 수상 실적</h2>
+            <p class="project-detail-summary">기존 포트폴리오의 수상 실적을 전체 목록으로 정리했습니다.</p>
+            <div class="award-table-wrap">
+                <table class="award-table">
+                    <thead>
+                        <tr>
+                            <th>수상일</th>
+                            <th>상급</th>
+                            <th>대회명</th>
+                            <th>수상기관</th>
+                        </tr>
+                    </thead>
+                    <tbody id="award-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
     <footer class="site-footer">
         <div class="footer-inner">
             <span>© 2026 Park Sangwon Robotics Portfolio.</span>
             <div class="socials" aria-label="하단 링크">
                 <a href="#work">Projects</a>
+                <a href="#awards">Awards</a>
                 <a href="#skills">Skills</a>
                 <a href="http://robotics-snagwon.kr/sw_Resume/" target="_blank" rel="noreferrer">Old Portfolio</a>
                 <a href="https://github.com/woni96" target="_blank" rel="noreferrer">GitHub</a>
