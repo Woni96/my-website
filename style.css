@@ -644,16 +644,17 @@ h2 {
     border-bottom: 1px solid var(--line);
 }
 
-.skill-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
-    gap: 46px;
-}
-
 .skill-band .eyebrow,
 .skill-band .section-copy,
-.skill-band .skill-list span {
+.skill-band .skill-title-row span,
+.skill-band .skill-card p,
+.skill-band .skill-card li {
     color: rgba(255, 255, 255, 0.72);
+}
+
+.skill-intro {
+    max-width: 850px;
+    margin-bottom: 30px;
 }
 
 .section-copy {
@@ -663,22 +664,126 @@ h2 {
     font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
-.skill-list {
+.skill-grid {
     display: grid;
-    gap: 12px;
-    align-content: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
 }
 
-.skill-item {
-    padding: 18px;
+.skill-card {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 16px;
+    min-height: 250px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.06);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.032)),
+        rgba(9, 15, 21, 0.88);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
 }
 
-.skill-item strong {
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.skill-icon svg {
+    width: 42px;
+    height: 42px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.code-icon,
+.ros-icon,
+.ardupilot-icon {
+    color: var(--accent);
+}
+
+.python-icon,
+.fusion-icon,
+.field-icon {
+    color: var(--sun);
+}
+
+.mcu-icon,
+.pcb-icon,
+.drone-icon {
+    color: var(--accent-2);
+}
+
+.lidar-icon,
+.android-icon {
+    color: #9ba8ff;
+}
+
+.skill-card-body {
+    min-width: 0;
+}
+
+.skill-title-row {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.skill-title-row h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.08rem;
+    line-height: 1.25;
+}
+
+.skill-title-row span {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 850;
+}
+
+.skill-meter {
+    height: 8px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.skill-meter span {
     display: block;
-    margin-bottom: 4px;
+    width: var(--level);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--accent), var(--sun));
+}
+
+.skill-card p {
+    margin-bottom: 12px;
+    font-size: 0.94rem;
+}
+
+.skill-card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.9rem;
+}
+
+.skill-card li + li {
+    margin-top: 6px;
 }
 
 .process {
@@ -967,7 +1072,6 @@ h2 {
 
     .hero,
     .section-heading,
-    .skill-layout,
     .contact-panel,
     .project-detail-grid {
         grid-template-columns: 1fr;
@@ -984,6 +1088,7 @@ h2 {
     }
 
     .work-grid,
+    .skill-grid,
     .process {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1005,12 +1110,24 @@ h2 {
     .hero-actions,
     .stats,
     .work-grid,
+    .skill-grid,
     .process {
         grid-template-columns: 1fr;
     }
 
-    .experience-card {
+    .experience-card,
+    .skill-card {
         padding: 20px;
+    }
+
+    .skill-card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .skill-title-row {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .hero-actions .button,
