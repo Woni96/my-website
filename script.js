@@ -239,9 +239,9 @@ const projectDetails = {
         ]
     },
     drone: {
-        title: "비행로봇 · Indoor Drone",
-        period: "(주)칼만 · 비행로봇/드론",
-        summary: "원전 해체 제염작업과 실내 지도 제작을 위한 비행로봇으로, Vision/LiDAR 기반 자율비행, AprilTag 자동 착륙, 방사능 측정 센서 모듈을 개발했습니다.",
+        title: "Indoor Drone",
+        period: "(주)칼만 · 드론",
+        summary: "원전 해체 제염작업과 실내 지도 제작을 위한 드론으로, Vision/LiDAR 기반 자율비행, AprilTag 자동 착륙, 방사능 측정 센서 모듈을 개발했습니다.",
         sections: [
             {
                 title: "전장 및 시스템",
