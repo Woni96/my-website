@@ -324,6 +324,20 @@ h2 {
     animation-delay: 0.4s;
 }
 
+.quadruped {
+    animation: quadrupedWalk 3.6s ease-in-out infinite;
+}
+
+.walk-leg {
+    animation: legStride 1.8s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center top;
+}
+
+.front-leg {
+    animation-delay: 0.45s;
+}
+
 .bubble-stream {
     animation: bubblesRise 3.8s ease-in-out infinite;
 }
@@ -343,30 +357,6 @@ h2 {
 
 .sonar-two {
     animation-delay: 0.45s;
-}
-
-.status-card {
-    position: absolute;
-    right: 18px;
-    bottom: 18px;
-    width: min(250px, calc(100% - 36px));
-    padding: 16px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: rgba(7, 12, 17, 0.82);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(12px);
-}
-
-.status-card strong {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.status-card span {
-    color: var(--muted);
-    font-size: 0.88rem;
-    font-weight: 700;
 }
 
 .section-heading {
@@ -1102,6 +1092,28 @@ h2 {
 
     50% {
         transform: translateY(-8px);
+    }
+}
+
+@keyframes quadrupedWalk {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(-1deg);
+    }
+}
+
+@keyframes legStride {
+    0%,
+    100% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(7deg);
     }
 }
 
