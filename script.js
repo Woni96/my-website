@@ -278,8 +278,8 @@ const projectDetails = {
         ]
     },
     condenser: {
-        title: "복수기 로봇",
-        period: "(주)칼만 · 복수기 검사 로봇",
+        title: "원전 복수기 검사 로봇",
+        period: "(주)칼만 · 원전 복수기 검사 로봇",
         summary: "Motor + CAN 기반 제어, 조이스틱/스위치 PCB, 컨트롤 박스 전장, 롤러·벨트형 펌프 제작을 통해 검사 로봇의 구동 시스템을 구성했습니다.",
         sections: [
             {
@@ -308,7 +308,7 @@ const projectDetails = {
         ]
     },
     pyper: {
-        title: "해수 배관 로봇 Pyper",
+        title: "해수 배관 로봇",
         period: "(주)칼만 · 해수 배관 로봇",
         summary: "멀티 로봇 제어를 위한 컨트롤 박스와 STM32 기반 입력 통신을 구성하고, 여러 원전 해수배관 현장 운용에 직접 참여했습니다.",
         sections: [
