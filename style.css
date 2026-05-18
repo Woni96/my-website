@@ -439,6 +439,78 @@ h2 {
     color: var(--accent);
 }
 
+.credential-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(300px, 0.72fr);
+    gap: 18px;
+}
+
+.education-timeline {
+    display: grid;
+    gap: 14px;
+}
+
+.education-item,
+.certification-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
+    gap: 20px;
+    padding: 22px;
+}
+
+.credential-period {
+    color: var(--accent);
+    font-size: 0.88rem;
+    font-weight: 850;
+}
+
+.credential-label {
+    margin-bottom: 7px;
+    color: var(--sun);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.education-item h3,
+.certification-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.14rem;
+    line-height: 1.35;
+}
+
+.education-item p:last-child,
+.certification-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.certification-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.certification-card {
+    min-height: 150px;
+    padding: 22px;
+}
+
+.certification-card .credential-period {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    border: 1px solid rgba(98, 214, 196, 0.42);
+    border-radius: 999px;
+    background: rgba(98, 214, 196, 0.09);
+}
+
 .project-card {
     min-height: 430px;
     display: flex;
@@ -1430,6 +1502,7 @@ h2 {
 
     .hero,
     .section-heading,
+    .credential-layout,
     .contact-panel,
     .project-detail-grid {
         grid-template-columns: 1fr;
@@ -1470,6 +1543,10 @@ h2 {
         grid-template-columns: 1fr;
     }
 
+    .certification-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .contact-actions {
         justify-content: flex-start;
     }
@@ -1495,6 +1572,7 @@ h2 {
     }
 
     .experience-card,
+    .education-item,
     .skill-card,
     .award-summary,
     .award-card,
@@ -1509,6 +1587,11 @@ h2 {
     .credential-row {
         grid-template-columns: 1fr;
         gap: 6px;
+    }
+
+    .education-item,
+    .certification-grid {
+        grid-template-columns: 1fr;
     }
 
     .skill-card {
