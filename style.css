@@ -1123,7 +1123,7 @@ h2 {
     object-fit: contain;   /* 전체 보이기 */
     object-position: center center;
 
-    transform: scale(1.15); /* 이미지 확대 */
+    transform: scale(0.9); /* 이미지 확대 */
 }
 
 @keyframes waterShift {
