@@ -9,14 +9,22 @@ const projectTitle = document.querySelector("#project-detail-title");
 const projectPeriod = document.querySelector("#project-detail-period");
 const projectSummary = document.querySelector("#project-detail-summary");
 const projectGrid = document.querySelector("#project-detail-grid");
+const projectLogo = document.querySelector("#project-detail-logo");
 const projectCloseItems = document.querySelectorAll("[data-close-project]");
 const awardOpenButton = document.querySelector("[data-open-awards]");
 const awardsModal = document.querySelector("#awards-modal");
 const awardTableBody = document.querySelector("#award-table-body");
 const awardCloseItems = document.querySelectorAll("[data-close-awards]");
 
+if (projectLogo) {
+    projectLogo.addEventListener("error", () => {
+        projectLogo.hidden = true;
+    });
+}
+
 const projectDetails = {
     "company-kalman": {
+        logo: "img/logo/kalman_logo.png",
         title: "(주)칼만",
         period: "연구개발 & 서비스 · System Team · 2024.03 - 재직 중",
         summary: "Robot System Engineer로서 원전, 항만, 수중 환경에서 운용되는 특수 목적 로봇의 전장 설계, 임베디드 제어, ROS 통신, 시스템 통합, 현장 운용과 납품 프로젝트를 수행했습니다.",
@@ -74,6 +82,7 @@ const projectDetails = {
         ]
     },
     "company-robot-sports": {
+        logo: "img/logo/KRSA_logo.png",
         title: "(사)대한로봇스포츠협회",
         period: "운영 기획 · 선임연구원 & 대리 · 2022.11 - 2023.08",
         summary: "국제로봇올림피아드 대회 운영과 종목 연구개발을 담당하며 드론, AI 자율주행, 창의 종목의 규정, 테스트 로봇, 교육 운영 체계를 기획했습니다.",
@@ -108,6 +117,7 @@ const projectDetails = {
         ]
     },
     "company-knut": {
+        logo: "img/logo/KNUT_logo.png",
         title: "한국교통대학교 전자공학과 인공지능 자동차 연구실",
         period: "연구원 · 라이다 센서 연구 · 2022.02 - 2022.08",
         summary: "Lv.4 자율주행자동차의 라이다 센서 데이터를 활용해 객체 검출, 지면 제거, 지면 검출, 차선 검출 알고리즘을 개발하고 검증했습니다.",
@@ -133,6 +143,7 @@ const projectDetails = {
         ]
     },
     "company-hands-on": {
+        logo: "img/logo/handson_logo.png",
         title: "(주)핸즈온테크놀러지",
         period: "현장실습 인턴 · 2017.06 - 2017.07",
         summary: "교육용 로봇 키트와 대회 테스트 로봇 제작을 보조하며 LEGO Mindstorms, Tetrix, RobotC, LabVIEW 기반의 로봇 제작과 소프트웨어 개발을 경험했습니다.",
@@ -599,6 +610,17 @@ const openProjectModal = (projectKey) => {
     projectTitle.textContent = project.title;
     projectPeriod.textContent = project.period;
     projectSummary.textContent = project.summary;
+    if (projectLogo) {
+        if (project.logo) {
+            projectLogo.src = project.logo;
+            projectLogo.alt = `${project.title} logo`;
+            projectLogo.hidden = false;
+        } else {
+            projectLogo.removeAttribute("src");
+            projectLogo.alt = "";
+            projectLogo.hidden = true;
+        }
+    }
     projectGrid.innerHTML = project.sections.map((section) => `
         <article class="detail-block">
             <h3>${section.title}</h3>

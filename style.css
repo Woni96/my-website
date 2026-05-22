@@ -585,6 +585,24 @@ h2 {
     height: 20px;
 }
 
+.project-detail-logo {
+    position: absolute;
+    top: 20px;
+    right: 72px;
+    width: min(150px, 28vw);
+    max-height: 58px;
+    object-fit: contain;
+    object-position: center;
+    padding: 8px 10px;
+    /* border: 1px solid var(--line); */
+    border-radius: 8px;
+    /* background: rgba(255, 255, 255, 0.88); */
+}
+
+.project-detail-logo[hidden] {
+    display: none;
+}
+
 .project-detail h2 {
     max-width: 720px;
     margin-bottom: 14px;
@@ -1414,6 +1432,18 @@ h2 {
 
     .robot-stage {
         min-height: 360px;
+    }
+
+    .project-detail-logo {
+        position: static;
+        display: block;
+        width: 132px;
+        max-width: 100%;
+        margin: 4px 52px 18px auto;
+    }
+
+    .project-detail-logo[hidden] {
+        display: none;
     }
 
     .project-card {
