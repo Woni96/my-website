@@ -24,6 +24,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#work">Projects</a>
                 <a href="#awards">Awards</a>
+                <a href="#articles">Articles</a>
                 <a href="#credentials">Credentials</a>
                 <a href="#skills">Skills</a>
                 <a href="#process">Process</a>
@@ -555,6 +556,48 @@
             </div>
         </section>
 
+        <section class="section" id="articles">
+            <div class="section-heading reveal">
+                <h2>Articles</h2>
+                <p>언론 기사와 대외 활동 기록을 일부만 먼저 보여주고, 전체 목록은 버튼으로 확인할 수 있습니다.</p>
+            </div>
+
+            <div class="article-summary reveal">
+                <div>
+                    <p class="eyebrow">Press & Media</p>
+                    <h3>로봇 동아리, 경진대회, 드론축구단, 칼만 프로젝트 관련 기사</h3>
+                    <p>
+                        김포대학교 RSC 활동부터 한국교통대학교 KNUT 드론축구단, 칼만 수중로봇 및 재난 대응 로봇 소개 기사까지
+                        주요 외부 보도 자료를 정리했습니다.
+                    </p>
+                </div>
+                <button class="button secondary" type="button" data-open-articles>전체 기사 보기</button>
+            </div>
+
+            <div class="article-grid">
+                <a class="article-card reveal" href="http://www.irobotnews.com/news/articleView.html?idxno=11341" target="_blank" rel="noreferrer">
+                    <span>로봇신문사</span>
+                    <strong>김포대학교 컴퓨터네트워크과 동아리 ‘RSC’</strong>
+                    <p>김포대 컴퓨터네트워크과 로봇동아리 RSC 소개 기사</p>
+                </a>
+                <a class="article-card reveal" href="https://ukp.ac.kr/archives/157435" target="_blank" rel="noreferrer">
+                    <span>김포대학교</span>
+                    <strong>‘김포대’ 2017 대학 스마트로봇 경진대회 우승</strong>
+                    <p>2017 대학 스마트로봇 경진대회 우승 소식</p>
+                </a>
+                <a class="article-card reveal" href="http://www.dynews.co.kr/news/articleView.html?idxno=613012" target="_blank" rel="noreferrer">
+                    <span>동양일보</span>
+                    <strong>한국교통대학교 KNUT 드론축구단, 과기정통부 장관상 수상</strong>
+                    <p>KNUT 드론축구단 수상 보도</p>
+                </a>
+                <a class="article-card reveal" href="https://kr.aving.net/news/articleView.html?idxno=1796540" target="_blank" rel="noreferrer">
+                    <span>AVING</span>
+                    <strong>칼만, CES 2025서 RADTECTOR-A & ROBSTER-C 알린다</strong>
+                    <p>원자력 발전소 특화 로봇과 수중 로봇 소개</p>
+                </a>
+            </div>
+        </section>
+
         <section class="section" id="credentials">
             <div class="section-heading reveal">
                 <h2>Education & Certifications</h2>
@@ -996,12 +1039,28 @@
         </section>
     </div>
 
+    <div class="project-modal" id="articles-modal" aria-hidden="true">
+        <div class="project-modal-backdrop" data-close-articles></div>
+        <section class="project-detail article-detail" role="dialog" aria-modal="true" aria-labelledby="articles-detail-title">
+            <button class="modal-close" type="button" data-close-articles aria-label="전체 기사 닫기">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <p class="eyebrow">Article List</p>
+            <h2 id="articles-detail-title">전체 기사 목록</h2>
+            <p class="project-detail-summary">기사를 클릭하면 원문 기사 창이 새 탭으로 열립니다.</p>
+            <div class="article-list" id="article-list"></div>
+        </section>
+    </div>
+
     <footer class="site-footer">
         <div class="footer-inner">
             <span>© 2026 Park Sangwon Robotics Portfolio.</span>
             <div class="socials" aria-label="하단 링크">
                 <a href="#work">Projects</a>
                 <a href="#awards">Awards</a>
+                <a href="#articles">Articles</a>
                 <a href="#credentials">Credentials</a>
                 <a href="#skills">Skills</a>
                 <a href="Park_Sangwon_Resume.pdf" download>Resume PDF</a>

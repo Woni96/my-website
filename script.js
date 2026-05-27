@@ -15,6 +15,10 @@ const awardOpenButton = document.querySelector("[data-open-awards]");
 const awardsModal = document.querySelector("#awards-modal");
 const awardTableBody = document.querySelector("#award-table-body");
 const awardCloseItems = document.querySelectorAll("[data-close-awards]");
+const articleOpenButton = document.querySelector("[data-open-articles]");
+const articlesModal = document.querySelector("#articles-modal");
+const articleList = document.querySelector("#article-list");
+const articleCloseItems = document.querySelectorAll("[data-close-articles]");
 
 if (projectLogo) {
     projectLogo.addEventListener("error", () => {
@@ -526,6 +530,81 @@ const awardItems = [
     }
 ];
 
+const articleItems = [
+    {
+        source: "로봇신문사",
+        title: "김포대학교 컴퓨터네트워크과 동아리 ‘RSC’",
+        summary: "김포대 컴퓨터네트워크과 로봇동아리 RSC 소개 기사",
+        url: "http://www.irobotnews.com/news/articleView.html?idxno=11341"
+    },
+    {
+        source: "로봇신문사",
+        title: "2017 이그나이트 스토리텔링 경진대회 성료",
+        summary: "2017 이그나이트 스토리텔링 경진대회 관련 보도",
+        url: "http://www.irobotnews.com/news/quickViewArticleView.html?idxno=10697"
+    },
+    {
+        source: "김포대학교",
+        title: "‘김포대’ 2017 대학 스마트로봇 경진대회 우승",
+        summary: "2017 대학 스마트로봇 경진대회 우승 소식",
+        url: "https://ukp.ac.kr/archives/157435"
+    },
+    {
+        source: "김포신문",
+        title: "김포대, ‘2016 청년취업아카데미 창직어워드’ 2년 연속수상",
+        summary: "청년취업아카데미 창직어워드 수상 기사",
+        url: "https://www.igimpo.com/news/articleView.html?idxno=43464"
+    },
+    {
+        source: "동양일보",
+        title: "한국교통대학교 KNUT 드론축구단, 과학기술정보통신부 장관상 수상",
+        summary: "KNUT 드론축구단 장관상 수상 보도",
+        url: "http://www.dynews.co.kr/news/articleView.html?idxno=613012"
+    },
+    {
+        source: "브레이크뉴스",
+        title: "한국교통대 KNUT 드론축구단, ‘2021 Robo-One’ 한국대표선발전 2년 연속 수상",
+        summary: "2021 Robo-One 한국대표선발전 수상 기사",
+        url: "https://www.breaknews.com/824982"
+    },
+    {
+        source: "뉴스1",
+        title: "한국교통대 드론축구단 창단 1년 만에 전국대회 준우승",
+        summary: "창단 1년 만의 전국대회 준우승 기사",
+        url: "https://www.news1.kr/local/sejong-chungbuk/4460451"
+    },
+    {
+        source: "베리타스알파",
+        title: "한국교통대 KNUT 드론축구단, 2021 울산 드론미션대회 전국드론축구대회 ‘준우승’",
+        summary: "울산 드론미션대회 전국드론축구대회 준우승 기사",
+        url: "http://www.veritas-a.com/news/articleView.html?idxno=391873"
+    },
+    {
+        source: "베리타스알파",
+        title: "한국교통대, KNUT 드론축구단 ‘2022 경상북도 전국 드론축구 대회’ 준우승 달성",
+        summary: "2022 경상북도 전국 드론축구 대회 준우승 기사",
+        url: "http://www.veritas-a.com/news/articleView.html?idxno=428167"
+    },
+    {
+        source: "한국경제",
+        title: "칼만, 수심 300m서 수색·인양 '롭스터'",
+        summary: "수중 수색·인양 로봇 롭스터 관련 기사",
+        url: "https://www.hankyung.com/article/2025092946561"
+    },
+    {
+        source: "AVING",
+        title: "칼만, CES 2025서 원자력 발전소 특화 로봇 ‘RADTECTOR-A’ & ‘ROBSTER-C’ 알린다",
+        summary: "원자력 발전소 특화 로봇과 수중 로봇 소개",
+        url: "https://kr.aving.net/news/articleView.html?idxno=1796540"
+    },
+    {
+        source: "AVING",
+        title: "칼만, ‘CES2026 Real Review:정책 제안 컨퍼런스’서 수난·고위험 재난 대응 ‘수중 원격작업 로봇’ 도입 제안",
+        summary: "수난·고위험 재난 대응 수중 원격작업 로봇 도입 제안 기사",
+        url: "https://kr.aving.net/news/articleView.html?idxno=1808004"
+    }
+];
+
 if (menuButton && navLinks) {
     menuButton.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("is-open");
@@ -664,6 +743,34 @@ const openAwardsModal = () => {
     document.body.classList.add("modal-open");
 };
 
+const closeArticlesModal = () => {
+    if (!articlesModal) {
+        return;
+    }
+
+    articlesModal.classList.remove("is-open");
+    articlesModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+};
+
+const openArticlesModal = () => {
+    if (!articlesModal || !articleList) {
+        return;
+    }
+
+    articleList.innerHTML = articleItems.map((article) => `
+        <a href="${article.url}" target="_blank" rel="noreferrer">
+            <span>${article.source}</span>
+            <strong>${article.title}</strong>
+            <p>${article.summary}</p>
+        </a>
+    `).join("");
+
+    articlesModal.classList.add("is-open");
+    articlesModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+};
+
 projectCards.forEach((card) => {
     card.addEventListener("click", () => openProjectModal(card.dataset.project));
     card.addEventListener("keydown", (event) => {
@@ -686,9 +793,18 @@ awardCloseItems.forEach((item) => {
     item.addEventListener("click", closeAwardsModal);
 });
 
+if (articleOpenButton) {
+    articleOpenButton.addEventListener("click", openArticlesModal);
+}
+
+articleCloseItems.forEach((item) => {
+    item.addEventListener("click", closeArticlesModal);
+});
+
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         closeProjectModal();
         closeAwardsModal();
+        closeArticlesModal();
     }
 });
