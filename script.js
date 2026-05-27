@@ -541,7 +541,7 @@ const articleItems = [
         source: "로봇신문사",
         title: "2017 이그나이트 스토리텔링 경진대회 성료",
         summary: "2017 이그나이트 스토리텔링 경진대회 관련 보도",
-        url: "http://www.irobotnews.com/news/quickViewArticleView.html?idxno=10697"
+        url: "https://www.irobotnews.com/news/articleView.html?idxno=10697"
     },
     {
         source: "김포대학교",
