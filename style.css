@@ -717,6 +717,16 @@ h2 {
     margin-top: 8px;
 }
 
+.detail-block a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.detail-block a:hover {
+    text-decoration: underline;
+}
+
 .award-summary {
     display: flex;
     align-items: center;

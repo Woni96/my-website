@@ -213,6 +213,12 @@ const projectDetails = {
                 items: [
                     "한국수력원자력 납품 프로젝트 참여"
                 ]
+            },
+            {
+                title: "관련 URL",
+                items: [
+                    `<a href="https://woni96.github.io/work_website/px4_ardusub_comparison/px4_ardusub_comparison.html#overview" target="_blank" rel="noopener noreferrer">PX4 · ArduSub 비교 사이트 보기</a>`
+                ]
             }
         ]
     },
